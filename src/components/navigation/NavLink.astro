@@ -1,0 +1,38 @@
+---
+import { Icon } from "astro-icon/components"
+import { Image } from "astro:assets"
+
+// components
+
+export type Props = {
+  href: string
+  img?: ImageMetadata
+  title: string
+  isActive?: boolean
+}
+
+const { href, img, title, isActive } = Astro.props
+---
+
+<a
+  href={href}
+  aria-label={img && title}
+  class:list={[
+    "transition-colors hover:text-foreground",
+    isActive ? "font-semibold" : "text-muted-foreground",
+  ]}
+>
+  {
+    img ? (
+      <Image
+        class="hover:scale-105"
+        src={img}
+        alt="Imla logo"
+        width={50}
+        loading="eager"
+      />
+    ) : (
+      <span>{title}</span>
+    )
+  }
+</a>

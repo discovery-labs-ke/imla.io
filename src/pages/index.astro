@@ -1,53 +1,23 @@
 ---
-import "@/styles/globals.css"
+import BaseLayout from "@/layouts/BaseLayout.astro"
 
-import { ThemeToggle } from "@/components/ThemeToggle"
-import { Icon } from "astro-icon/components"
+import Heading from "@/components/Heading.astro"
+import Hero from "@/components/home/Hero"
+import { Image } from "astro:assets"
+import ui from "@/assets/ui.png"
 ---
 
-<script is:inline>
-  const getThemePreference = () => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme")
-    }
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light"
-  }
-  const isDark = getThemePreference() === "dark"
-  document.documentElement.classList[isDark ? "add" : "remove"]("dark")
-
-  if (typeof localStorage !== "undefined") {
-    const observer = new MutationObserver(() => {
-      const isDark = document.documentElement.classList.contains("dark")
-      localStorage.setItem("theme", isDark ? "dark" : "light")
-    })
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    })
-  }
-</script>
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1 class="text-2xl">Astro</h1>
-    <ThemeToggle client:load>
-      <Icon
-        name="sun"
-        class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
-      />
-      <Icon
-        name="moon"
-        class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
-      />
-    </ThemeToggle>
-  </body>
-</html>
+<BaseLayout>
+  <Hero client:load>
+    <Image
+      src={ui}
+      alt="Imla for desktops"
+      format="avif"
+      width={1000}
+      loading="eager"
+      densities={[1.5, 2]}
+    />
+  </Hero>
+  <Heading tagName="h1">Sphinx of black quartz, judge my vow</Heading>
+  <p>Hello to a cool paragraph</p>
+</BaseLayout>
