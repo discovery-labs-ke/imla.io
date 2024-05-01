@@ -1,4 +1,4 @@
-import { ContainerScroll } from "@/components/home/container-scroll-animation"
+import { ContainerScroll } from "@/components/home/hero/container-scroll-animation"
 
 import type { ReactNode } from "react"
 

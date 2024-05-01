@@ -2,9 +2,10 @@
 import BaseLayout from "@/layouts/BaseLayout.astro"
 
 import Heading from "@/components/Heading.astro"
-import Hero from "@/components/home/Hero"
+import Hero from "@/components/home/hero/Hero"
 import { Image } from "astro:assets"
 import ui from "@/assets/ui.png"
+import Testimonials from "@/components/home/testimonials/Testimonials.astro"
 ---
 
 <BaseLayout>
@@ -18,6 +19,6 @@ import ui from "@/assets/ui.png"
       densities={[1.5, 2]}
     />
   </Hero>
-  <Heading tagName="h1">Sphinx of black quartz, judge my vow</Heading>
-  <p>Hello to a cool paragraph</p>
+
+  <Testimonials />
 </BaseLayout>

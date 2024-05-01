@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content"
+import { InfiniteMovingCards } from "./infinite-moving-cards"
+import Heading from "@/components/Heading.astro"
+
+const testimonials = await getCollection("testimonials")
+---
+
+<section
+  aria-label="Testimonials section"
+  class="h-[40rem] container space-y-6"
+>
+  <Heading tagName="h1" classes="text-center"
+    >We are making a difference</Heading
+  >
+  <div
+    class="rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden"
+  >
+    <InfiniteMovingCards
+      client:visible
+      items={testimonials.map(({ data }) => data)}
+      direction="right"
+      speed="slow"
+    />
+  </div>
+</section>
