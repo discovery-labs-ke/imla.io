@@ -21,7 +21,18 @@ const faqs = defineCollection({
   }),
 })
 
+const steps = defineCollection({
+  type: "data",
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      thumbnail: image(),
+    }),
+})
+
 export const collections = {
   testimonials,
   faqs,
+  steps,
 }

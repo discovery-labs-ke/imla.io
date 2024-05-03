@@ -6,6 +6,7 @@ import { Image } from "astro:assets"
 import ui from "@/assets/ui.png"
 import Testimonials from "@/components/home/testimonials/Testimonials.astro"
 import FaqSection from "@/components/faqs/FaqSection.astro"
+import Guide from "@/components/home/guide/Guide.astro"
 ---
 
 <BaseLayout>
@@ -19,6 +20,7 @@ import FaqSection from "@/components/faqs/FaqSection.astro"
       densities={[1.5, 2]}
     />
   </Hero>
-  <FaqSection />
+  <Guide />
   <Testimonials />
+  <FaqSection />
 </BaseLayout>

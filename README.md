@@ -16,6 +16,7 @@
 - [x] Testimonials - Infinite moving cards
 - [ ] Good vs Bad quality audio - Grid and dot background
 - [x] FAQs
+- [ ] CTA: Reach out
 
 ### Pricing
 

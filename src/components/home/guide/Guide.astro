@@ -1,0 +1,22 @@
+---
+// layouts
+import SectionWrapper from "@/layouts/SectionWrapper.astro"
+
+// components
+import Heading from "@/components/Heading.astro"
+
+import { getCollection } from "astro:content"
+
+import StepCard from "../guide/StepCard.astro"
+
+const steps = await getCollection("steps")
+---
+
+<SectionWrapper>
+  <section aria-label="How it works section" class="space-y-14 lg:space-y-32">
+    <Heading tagName="h1" classes="text-center">How it works</Heading>
+    <div class="flex justify-center gap-4 flex-wrap">
+      {steps.slice(0, 3).map((item) => <StepCard data={item.data} />)}
+    </div>
+  </section>
+</SectionWrapper>

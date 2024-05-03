@@ -12,7 +12,11 @@ export default function FaqList({
   data: CollectionEntry<"faqs">["data"][]
 }) {
   return (
-    <Accordion type="single" collapsible className="w-full">
+    <Accordion
+      type="single"
+      collapsible
+      className="w-full bg-background rounded-xl px-8 py-2"
+    >
       {data.map((item, idx) => (
         <AccordionItem key={"faq-" + idx} value={"faq-" + idx}>
           <AccordionTrigger className="text-pretty">

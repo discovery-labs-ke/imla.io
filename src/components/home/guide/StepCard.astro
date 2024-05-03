@@ -1,0 +1,30 @@
+---
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Image } from "astro:assets"
+import type { CollectionEntry } from "astro:content"
+
+type Props = {
+  data: CollectionEntry<"steps">["data"]
+}
+
+const { data } = Astro.props
+
+const { title, description, thumbnail } = data
+---
+
+<Card
+  className="overflow-hidden max-w-sm border-2 transition-transform hover:scale-105"
+>
+  <Image src={thumbnail} alt={title} width={400} format="avif" />
+  <CardHeader className="py-3">
+    <CardTitle className="text-balance">{title}</CardTitle>
+    <CardDescription className="max-w-lg text-balance leading-relaxed">
+      {description}
+    </CardDescription>
+  </CardHeader>
+</Card>
