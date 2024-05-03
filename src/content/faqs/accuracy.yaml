@@ -1,0 +1,3 @@
+question: How accurate are the transcripts?
+answer: The accuracy of the transcripts depends on the audio quality and the chosen language. Imla performs best with clear audio and utilizes Kenyan-specific speech recognition models for 95% accuracy.
+isGeneral: true

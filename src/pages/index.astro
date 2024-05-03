@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro"
 
-import Heading from "@/components/Heading.astro"
 import Hero from "@/components/home/hero/Hero"
 import { Image } from "astro:assets"
 import ui from "@/assets/ui.png"
 import Testimonials from "@/components/home/testimonials/Testimonials.astro"
+import FaqSection from "@/components/faqs/FaqSection.astro"
 ---
 
 <BaseLayout>
@@ -19,6 +19,6 @@ import Testimonials from "@/components/home/testimonials/Testimonials.astro"
       densities={[1.5, 2]}
     />
   </Hero>
-
+  <FaqSection />
   <Testimonials />
 </BaseLayout>

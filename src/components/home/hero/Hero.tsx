@@ -7,15 +7,13 @@ export default function Hero({ children }: { children: ReactNode }) {
     <div className="flex flex-col overflow-hidden">
       <ContainerScroll
         titleComponent={
-          <>
-            <h1 className="text-4xl  text-foreground">
-              Unleash the power of
-              <br />
-              <span className="text-5xl md:text-[6rem] font-black mt-1 leading-none font-serif">
-                Imla Transcripts
-              </span>
-            </h1>
-          </>
+          <h1 className="text-4xl  text-foreground text-balance">
+            Unleash the power of
+            <br />
+            <span className="text-5xl md:text-[6rem] font-black mt-1 leading-none font-serif text-balance">
+              Imla Transcripts
+            </span>
+          </h1>
         }
       >
         {children}

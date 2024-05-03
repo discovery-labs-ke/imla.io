@@ -12,6 +12,16 @@ const testimonials = defineCollection({
   }),
 })
 
+const faqs = defineCollection({
+  type: "data",
+  schema: z.object({
+    question: z.string(),
+    answer: z.string(),
+    isGeneral: z.boolean(),
+  }),
+})
+
 export const collections = {
   testimonials,
+  faqs,
 }

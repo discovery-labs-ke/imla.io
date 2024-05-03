@@ -3,35 +3,16 @@ import type { Props as Link } from "./NavLink.astro"
 import NavLink from "./NavLink.astro"
 import logo from "@/assets/logo.png"
 
-const links: Link[] = [
-  {
-    title: "Imla",
-    href: "/",
-    img: logo,
-  },
-  {
-    title: "Pricing",
-    href: "/pricing",
-  },
-  {
-    title: "Contact Us",
-    href: "/contact",
-  },
-  {
-    title: "Blog",
-    href: "/blog",
-  },
-  {
-    title: "Login",
-    href: "/login",
-  },
-]
+type Props = {
+  data: Link[]
+}
 
 const currentPage = Astro.url.pathname
+const { data } = Astro.props
 ---
 
 {
-  links.map((link) => (
+  data.map((link) => (
     <NavLink
       img={link.img}
       href={link.href}

@@ -9,9 +9,10 @@ export type Props = {
   img?: ImageMetadata
   title: string
   isActive?: boolean
+  classes?: string
 }
 
-const { href, img, title, isActive } = Astro.props
+const { href, img, title, isActive, classes } = Astro.props
 ---
 
 <a
@@ -19,7 +20,8 @@ const { href, img, title, isActive } = Astro.props
   aria-label={img && title}
   class:list={[
     "transition-colors hover:text-foreground",
-    isActive ? "font-semibold" : "text-muted-foreground",
+    isActive ? "font-semibold text-primary" : "text-foreground",
+    classes,
   ]}
 >
   {
