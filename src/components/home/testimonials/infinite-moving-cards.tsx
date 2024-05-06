@@ -1,3 +1,10 @@
+import {
+  Card,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 import React, { useEffect, useState } from "react"
 
@@ -115,29 +122,29 @@ export const InfiniteMovingCards = ({
         {items.map((item, idx) => {
           return (
             <li
-              className="w-[350px] max-w-full relative rounded-xl flex-shrink-0 border-2  px-8 py-6 md:w-[450px] bg-background"
               key={item.name}
+              className="w-[350px] max-w-full max-h-full  md:w-[450px] "
             >
-              <blockquote>
-                <div
-                  aria-hidden="true"
-                  className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-                ></div>
-                <span className=" relative z-20 text-sm leading-[1.6] text-foreground">
-                  {item.quote}
-                </span>
-                <div className="relative z-20 mt-4 flex flex-row items-center gap-4">
-                  <div className="rounded-full size-10 bg-foreground/80 grid place-items-center">
-                    <span className=" text-background">
-                      {getInitials(item.name)}
+              <Card className="size-full border-2">
+                <CardHeader className="py-3">
+                  <CardDescription className="text-pretty leading-relaxed text-normal">
+                    {item.quote}
+                  </CardDescription>
+                </CardHeader>
+                <CardFooter>
+                  <div className="flex flex-row items-center gap-4">
+                    <div className="rounded-full size-10 bg-foreground/80 grid place-items-center">
+                      <span className=" text-background">
+                        {getInitials(item.name)}
+                      </span>
+                    </div>
+                    <span className="flex flex-col text-muted-foreground  text-sm">
+                      <span className="">{item.name}</span>
+                      <span className="text-xs">{item.title}</span>
                     </span>
                   </div>
-                  <span className="flex flex-col text-muted-foreground  text-sm">
-                    <span className="">{item.name}</span>
-                    <span className="text-xs">{item.title}</span>
-                  </span>
-                </div>
-              </blockquote>
+                </CardFooter>
+              </Card>
             </li>
           )
         })}

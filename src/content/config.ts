@@ -31,8 +31,19 @@ const steps = defineCollection({
     }),
 })
 
+const features = defineCollection({
+  type: "data",
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      thumbnail: image(),
+    }),
+})
+
 export const collections = {
   testimonials,
   faqs,
   steps,
+  features,
 }

@@ -48,13 +48,6 @@ export const ContainerScroll = ({
         <Card rotate={rotate} translate={translate} scale={scale}>
           {children}
         </Card>
-
-        {/* <p className="container md:max-w-5xl text-pretty text-center transition-all translate-y-10">
-          In publishing and graphic design, Lorem ipsum is a placeholder text
-          commonly used to demonstrate the visual form of a document or a
-          typeface without relying on meaningful content. Lorem ipsum may be
-          used as a placeholder before the final copy is available.
-        </p> */}
       </div>
     </div>
   )

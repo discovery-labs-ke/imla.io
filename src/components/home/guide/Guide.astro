@@ -14,8 +14,10 @@ const steps = await getCollection("steps")
 
 <SectionWrapper>
   <section aria-label="How it works section" class="space-y-14 lg:space-y-32">
-    <Heading tagName="h1" classes="text-center">How it works</Heading>
-    <div class="flex justify-center gap-4 flex-wrap">
+    <Heading tagName="h1" classes="text-center"
+      >How <span class="text-primary">Imla</span> works</Heading
+    >
+    <div class="flex justify-center gap-y-4 gap-x-8 flex-wrap">
       {steps.slice(0, 3).map((item) => <StepCard data={item.data} />)}
     </div>
   </section>

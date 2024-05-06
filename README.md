@@ -12,15 +12,15 @@
 ### Home
 
 - [x] Hero (dashboard showcase) - Container scroll animation
-- [ ] Features - Sticky scroll reveal
 - [x] Testimonials - Infinite moving cards
-- [ ] Good vs Bad quality audio - Grid and dot background
+- [x] How it works
+- [x] Features
 - [x] FAQs
-- [ ] CTA: Reach out
+- [x] CTA
 
 ### Pricing
 
-- [ ] Pricing cards - Background gradient - table format of bundles on the left, benefits on the right
+- [ ] Pricing table - Background gradient - table format of bundles on the left, benefits on the right
 - [ ] Cost calculator + Quote generator - Grid and dot background
 - [ ] Contact sales form
 
@@ -28,14 +28,14 @@
 
 - [ ] List
   - getting started guide
-  - how to edit article
+  - how to edit transcripts
   - success stories
   - daniel's linked in articles
 - [ ] View template - Tracing beam
 
 ### Dev Tools
 
-- [ ] Astro page insight
+- [x] Astro page insight
 - [ ] Astro meta tags
 - [ ] Cypress for testing
 
@@ -46,4 +46,4 @@
 - [ ] Astro SEO
 - [ ] Astro sitemaps
 - [ ] Astro analytics
-- [ ] Whatsapp integration
+- [ ] WhatsApp integration

@@ -1,0 +1,24 @@
+---
+import Heading from "@/components/Heading.astro"
+import { Button } from "@/components/ui/button"
+import SectionWrapper from "@/layouts/SectionWrapper.astro"
+import { Icon } from "astro-icon/components"
+---
+
+<SectionWrapper>
+  <section aria-label="Get started section" class="space-y-4">
+    <Heading tagName="h1" classes="text-center">
+      Ready to get started?
+    </Heading>
+    <div class="flex flex-col justify-center items-center space-y-4">
+      <p class="text-muted-foreground text-pretty text-center max-w-lg text-lg">
+        Starting is as easy as clicking the button below, and we will take you
+        through every step of the way.
+      </p>
+      <Button variant="default" className="w-fit text-lg" size="lg"
+        >Get started
+        <Icon name="next" class="ml-1 size-6" />
+      </Button>
+    </div>
+  </section>
+</SectionWrapper>

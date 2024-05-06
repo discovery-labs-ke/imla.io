@@ -1,0 +1,23 @@
+---
+import Heading from "@/components/Heading.astro"
+import { Image } from "astro:assets"
+import type { CollectionEntry } from "astro:content"
+
+type Props = {
+  data: CollectionEntry<"features">["data"]
+}
+const { data } = Astro.props
+const { thumbnail, title, description } = data
+---
+
+<li
+  class="flex flex-col items-center gap-x-14 gap-y-6 lg:flex-row lg:even:flex-row-reverse w-fit"
+>
+  <Image src={thumbnail} alt="feature" width={500} class="rounded-2xl" />
+  <div class="space-y-4 max-w-xl">
+    <Heading tagName="h2"> {title}</Heading>
+    <p class="text-muted-foreground text-pretty">
+      {description}
+    </p>
+  </div>
+</li>

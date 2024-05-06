@@ -21,3 +21,5 @@ export default function Hero({ children }: { children: ReactNode }) {
     </div>
   )
 }
+
+// tell user about transcription esp the niche for Kenyan english + swahili

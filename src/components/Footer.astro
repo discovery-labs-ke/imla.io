@@ -1,0 +1,81 @@
+---
+import { Image } from "astro:assets"
+
+import logo from "@/assets/logo.png"
+import { Button } from "./ui/button"
+import { Icon } from "astro-icon/components"
+
+import { footerLinks } from "@/data/siteData"
+---
+
+<footer aria-label="footer-heading" class="border-t bg-card">
+  <h2 class="text-foreground sr-only" id="footer-heading">Footer</h2>
+  <div
+    class="mx-auto w-full px-4 md:px-6 lg:px-8 xl:px-[3.75rem] max-w-7xl py-12 lg:py-16"
+  >
+    <div class="lg:grid lg:grid-cols-4 xl:gap-8">
+      <div class="flex flex-col justify-between gap-y-4 xl:col-span-2">
+        <div class="flex flex-col gap-y-6">
+          <Image src={logo} alt="Imla logo" width={100} loading="lazy" />
+
+          <div class="flex gap-x-5">
+            <Button variant="outline" size="icon">
+              <Icon
+                name="facebook"
+                class="h-[1.2rem] w-[1.2rem] text-foreground"
+              />
+            </Button>
+            <Button variant="outline" size="icon">
+              <Icon name="in" class="h-[1.2rem] w-[1.2rem] text-foreground" />
+            </Button>
+            <div class="flex gap-2 items-center border rounded-full px-4 w-fit">
+              <p class="mt-[3px] text-muted-foreground">0113291109</p>
+              <Icon name="phone" class="size-5 text-muted-foreground" />
+            </div>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <span class="text-muted-foreground text-sm block">
+            © 2024 Discovery Labs Ltd. All rights reserved.
+          </span>
+        </div>
+      </div>
+      <div
+        class="mt-12 grid grid-cols-2 gap-12 md:grid-cols-3 lg:col-span-2 lg:mt-0"
+      >
+        {
+          footerLinks.map((group) => (
+            <div class="col-span-1 md:grid md:gap-12">
+              <div class="flex flex-col gap-y-2">
+                <h3 class="">
+                  <span class="text-foreground text-sm font-medium">
+                    {group.name}
+                  </span>
+                </h3>
+                <ul class="flex flex-col gap-y-2" role="list">
+                  {group.children.map((link) => (
+                    <li>
+                      <span class="text-muted-foreground text-sm block">
+                        <a
+                          class="transition-colors hover:text-foreground/90 dark:hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-dark dark:focus-visible:outline-brand"
+                          href={link.href}
+                        >
+                          {link.name}
+                        </a>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div class="mt-12 border-t pt-8 lg:hidden">
+      <span class="text-muted-foreground text-sm block">
+        © 2024 Discovery Labs Ltd. All rights reserved.
+      </span>
+    </div>
+  </div>
+</footer>
