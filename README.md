@@ -4,29 +4,35 @@
 
 ### General
 
-- [x] Nav
-- [ ] Footer
-- [ ] UI screenshots
 - [x] View transitions
+- [ ] Nav - add navigation to sections: features, guide etc
+- [x] Footer
+- [ ] UI screenshots
 
 ### Home
 
-- [x] Hero (dashboard showcase) - Container scroll animation
-- [x] Testimonials - Infinite moving cards
+- [x] Hero (dashboard showcase)
+- [x] Testimonials
 - [x] How it works
+- [ ] Introducing Imla Assistant
 - [x] Features
 - [x] FAQs
 - [x] CTA
 
 ### Pricing
 
-- [ ] Pricing table - Background gradient - table format of bundles on the left, benefits on the right
-- [ ] Cost calculator + Quote generator - Grid and dot background
+- [x] Pricing table
+- [x] Cost calculator + print
+- [x] FAQ
+
+### Contact sales
+
 - [ ] Contact sales form
 
 ### Blog
 
 - [ ] List
+  - Imla Assistant - How it works
   - getting started guide
   - how to edit transcripts
   - success stories

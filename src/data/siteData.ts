@@ -78,3 +78,23 @@ export const footerLinks: FooterGroup[] = [
     ],
   },
 ]
+
+export const pricingBundles = [
+  {
+    bundle: "1.5 hours",
+    price: 150,
+  },
+  {
+    bundle: "100 hours",
+    price: 4800,
+  },
+]
+
+export const pricingBenefits = [
+  "Speaker identification and timestamps",
+  "Email support",
+  "Multiple download formats",
+  "Sentiment analysis",
+  "Summary generation",
+  "And many more data analysis features powered by Imla Assistant",
+]

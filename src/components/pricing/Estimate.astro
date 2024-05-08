@@ -1,0 +1,75 @@
+---
+import SectionWrapper from "@/layouts/SectionWrapper.astro"
+import Heading from "@/components/Heading.astro"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
+import EstimateForm from "./EstimateForm"
+import { Button } from "@/components/ui/button"
+import { Icon } from "astro-icon/components"
+---
+
+<SectionWrapper>
+  <section
+    aria-label=""
+    class="space-y-14 lg:space-y-32 flex flex-col items-center"
+  >
+    <Heading
+      tagName="h1"
+      classes="text-center"
+    >
+      Need a lot more minutes?
+      <br />
+      Estimate your <span class="text-primary">bulk transcription</span> cost
+    </Heading>
+
+    <Card className="w-full sm:max-w-2xl lg:text-lg">
+      <CardHeader>
+        <div class="flex justify-between">
+          <div>
+            <CardTitle className="tracking-wide">
+              Bulk transcription
+            </CardTitle>
+            <CardDescription> Starting from 500 hours </CardDescription>
+          </div>
+
+          <Button
+            aria-label="Print quote"
+            variant="outline"
+            size="icon"
+            className="md:hidden"
+          >
+            <Icon
+              name="print"
+              class="size-5"
+            />
+          </Button>
+
+          <Button
+            aria-label="Print quote"
+            variant="outline"
+            className="hidden md:flex"
+          >
+            <span>Print quote</span>
+            <Icon
+              name="print"
+              class="size-5 ml-2"
+            />
+          </Button>
+        </div>
+      </CardHeader>
+      <CardContent className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <EstimateForm client:only="react" />
+        <div class="lg:border-l-2 lg:pl-6 space-y-2">
+          <p class="text-muted-foreground text-lg">Estimated cost</p>
+          <p class="text-primary text-xl lg:text-2xl font-bold">KES. 50,000</p>
+        </div>
+      </CardContent>
+    </Card>
+  </section>
+</SectionWrapper>
