@@ -19,8 +19,8 @@ const { href, img, title, isActive, classes } = Astro.props
   href={href}
   aria-label={img && title}
   class:list={[
-    "transition-colors hover:text-foreground",
-    isActive ? "font-semibold text-primary" : "text-foreground",
+    "transition-colors hover:text-primary",
+    isActive ? "text-primary" : "text-foreground",
     classes,
   ]}
 >

@@ -1,0 +1,39 @@
+---
+import SectionWrapper from "@/layouts/SectionWrapper.astro"
+
+import Heading from "@/components/Heading.astro"
+import ContactForm from "./ContactForm"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+---
+
+<SectionWrapper>
+  <section
+    aria-label="Contact us section"
+    class="space-y-14 lg:space-y-32 flex flex-col items-center"
+  >
+    <Heading
+      tagName="h1"
+      classes="text-center max-w-3xl"
+    >
+      Have questions, feedback or anything to say?
+    </Heading>
+
+    <Card className="w-full sm:max-w-2xl lg:text-lg">
+      <CardHeader>
+        <CardTitle className="tracking-wide">Contact Us</CardTitle>
+        <CardDescription>
+          We usually get back within a day or two.
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="">
+        <ContactForm client:only="react" />
+      </CardContent>
+    </Card>
+  </section>
+</SectionWrapper>

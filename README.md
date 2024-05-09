@@ -27,7 +27,7 @@
 
 ### Contact sales
 
-- [ ] Contact sales form
+- [x] Contact sales form
 
 ### Blog
 

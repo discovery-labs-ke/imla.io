@@ -21,7 +21,7 @@ const links: Link[] = [
   },
   {
     title: "Contact Us",
-    href: "/contact",
+    href: "/contact-us",
   },
   {
     title: "Blog",
@@ -65,7 +65,9 @@ const currentPage = Astro.url.pathname
           class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
         />
       </ThemeToggle>
-      <Button variant="default" className="w-fit"
+      <Button
+        variant="default"
+        className="w-fit"
         >Get started
         <!-- <Icon name="next" class="size-6" /> -->
       </Button>
@@ -73,16 +75,30 @@ const currentPage = Astro.url.pathname
 
     <MobileNav client:visible>
       <NavList data={links} />
-      <Button variant="default" className="w-fit md:hidden"
+      <Button
+        variant="default"
+        className="w-fit md:hidden"
         >Get started
         <!-- <Icon name="next" class="size-6" /> -->
       </Button>
       <div class="flex gap-4">
-        <Button variant="outline" size="icon">
-          <Icon name="facebook" class="h-[1.2rem] w-[1.2rem] text-foreground" />
+        <Button
+          variant="outline"
+          size="icon"
+        >
+          <Icon
+            name="facebook"
+            class="h-[1.2rem] w-[1.2rem] text-foreground"
+          />
         </Button>
-        <Button variant="outline" size="icon">
-          <Icon name="twitter" class="h-[1.1rem] w-[1.1rem] text-foreground" />
+        <Button
+          variant="outline"
+          size="icon"
+        >
+          <Icon
+            name="twitter"
+            class="h-[1.1rem] w-[1.1rem] text-foreground"
+          />
         </Button>
         <ThemeToggle client:idle>
           <Icon
