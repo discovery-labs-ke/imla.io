@@ -41,9 +41,23 @@ const features = defineCollection({
     }),
 })
 
+const posts = defineCollection({
+  type: "content",
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      thumbnail: image(),
+      pubDate: z.date(),
+      isDraft: z.boolean().optional(),
+      category: z.string(),
+    }),
+})
+
 export const collections = {
   testimonials,
   faqs,
   steps,
   features,
+  posts,
 }

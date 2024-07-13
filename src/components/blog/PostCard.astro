@@ -1,0 +1,66 @@
+---
+import { Badge } from "@/components/ui/badge"
+import { Image } from "astro:assets"
+import type { CollectionEntry } from "astro:content"
+
+type Props = CollectionEntry<"posts">
+
+const post = Astro.props
+
+const { title, description, thumbnail, pubDate, category } = post.data
+---
+
+<article class="group space-y-4">
+  <a
+    href={`/blog/${post.slug}/`}
+    class="flex h-52 group-hover:-translate-y-2 group-hover:shadow-xl transition duration-300"
+  >
+    <Image
+      loading="eager"
+      class="w-full h-full object-cover rounded-xl overflow-hidden"
+      width={720}
+      height={360}
+      src={thumbnail}
+      alt={post.slug}
+      transition:name={`img-${post.slug}`}
+    />
+  </a>
+
+  <div class="flex items-center justify-between">
+    <a
+      href={`/blog/category/${category}`}
+      transition:name={"badge-cat-" + post.slug}
+    >
+      <Badge className="capitalize text-background">
+        {category}
+      </Badge>
+    </a>
+    <time
+      datetime={pubDate.toISOString()}
+      class="font-medium text-muted-foreground"
+      transition:name={"date-" + post.slug}
+    >
+      {
+        pubDate.toLocaleDateString("en-US", {
+          month: "short",
+          day: "2-digit",
+          year: "numeric",
+        })
+      }
+    </time>
+  </div>
+
+  <div>
+    <a
+      href={`/blog/${post.slug}/`}
+      class="group-hover:underline"
+    >
+      <h2
+        class="font-heading text-xl md:text-2xl leading-snug line-clamp-3"
+        transition:name={"title-" + post.slug}
+      >
+        {title}
+      </h2>
+    </a>
+  </div>
+</article>

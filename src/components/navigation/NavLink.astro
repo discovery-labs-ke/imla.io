@@ -1,4 +1,5 @@
 ---
+import { extractSegmentURL } from "@/lib/utils"
 import { Icon } from "astro-icon/components"
 import { Image } from "astro:assets"
 
@@ -13,6 +14,7 @@ export type Props = {
 }
 
 const { href, img, title, isActive, classes } = Astro.props
+const segment = extractSegmentURL(Astro.url.pathname)
 ---
 
 <a
@@ -20,7 +22,7 @@ const { href, img, title, isActive, classes } = Astro.props
   aria-label={img && title}
   class:list={[
     "transition-colors hover:text-primary",
-    isActive ? "text-primary" : "text-foreground",
+    href.startsWith(`/${segment}`) ? "text-primary" : "text-foreground",
     classes,
   ]}
 >

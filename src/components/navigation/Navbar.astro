@@ -6,6 +6,7 @@ import NavList from "./NavList.astro"
 import MobileNav from "./MobileNav"
 import NavLink from "./NavLink.astro"
 import type { Props as Link } from "./NavLink.astro"
+import { extractSegmentURL } from "@/lib/utils"
 
 import logo from "@/assets/logo.png"
 
@@ -32,8 +33,6 @@ const links: Link[] = [
     href: "/login",
   },
 ]
-
-const currentPage = Astro.url.pathname
 ---
 
 <header class="sticky top-0 h-16 bg-background z-50 bottom-1">
@@ -50,7 +49,6 @@ const currentPage = Astro.url.pathname
       img={logo}
       href={"/"}
       title={"Imla"}
-      isActive={currentPage === "/"}
       classes="md:hidden"
     />
 
@@ -73,7 +71,7 @@ const currentPage = Astro.url.pathname
       </Button>
     </div>
 
-    <MobileNav client:visible>
+    <MobileNav client:load>
       <NavList data={links} />
       <Button
         variant="default"

@@ -29,9 +29,13 @@
 
 - [x] Contact sales form
 
+### Changelog
+
+- [ ] Template: https://astro-nomy.vercel.app/releases
+
 ### Blog
 
-- [ ] List
+- [x] List
   - Imla Assistant - How it works
   - getting started guide
   - how to edit transcripts

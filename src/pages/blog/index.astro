@@ -1,0 +1,35 @@
+---
+import PostCard from "@/components/blog/PostCard.astro"
+import Heading from "@/components/Heading.astro"
+import BaseLayout from "@/layouts/BaseLayout.astro"
+import SectionWrapper from "@/layouts/SectionWrapper.astro"
+import { getCollection } from "astro:content"
+
+const posts = (await getCollection("posts")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+)
+---
+
+<BaseLayout
+  title="The Imla Blog"
+  description="Cool blog description"
+>
+  <SectionWrapper>
+    <section
+      aria-label="Welcome, world"
+      class="space-y-14 lg:space-y-32 flex flex-col items-center"
+    >
+      <Heading
+        tagName="h1"
+        classes="text-center max-w-3xl"
+        >Get all the latest news from the <span class="text-primary">Imla</span
+        >verse</Heading
+      >
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-9 md:gap-y-11 lg:gap-y-16 lg:gap-x-8"
+      >
+        {posts.map((post) => <PostCard {...post} />)}
+      </div>
+    </section>
+  </SectionWrapper>
+</BaseLayout>
