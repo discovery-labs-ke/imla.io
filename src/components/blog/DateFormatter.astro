@@ -1,0 +1,22 @@
+---
+type Props = {
+  date: Date
+  slug: string
+}
+
+const { date, slug } = Astro.props
+---
+
+<time
+  datetime={date.toISOString()}
+  class="font-medium text-muted-foreground"
+  transition:name={"date-" + slug}
+>
+  {
+    date.toLocaleDateString("en-US", {
+      month: "short",
+      day: "2-digit",
+      year: "numeric",
+    })
+  }
+</time>

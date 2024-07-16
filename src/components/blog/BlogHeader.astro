@@ -1,0 +1,70 @@
+---
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import Heading from "@/components/Heading.astro"
+import { getCollection } from "astro:content"
+
+type Props = {
+  title: string
+}
+
+const { title } = Astro.props
+const { category } = Astro.params
+
+const posts = await getCollection("posts")
+const categories = [...new Set(posts.map((post) => post.data.category).flat())]
+---
+
+<Heading
+  tagName="h1"
+  classes="text-center max-w-3xl pb-14 lg:pb-32"
+>
+  {title}
+</Heading>
+
+<div class="flex justify-center max-md:gap-4">
+  <!-- <div
+      class="flex items-center lg:w-full max-w-xs h-10 rounded-md px-2 lg:px-3 border text-muted-foreground"
+    >
+      <Icon name="ri:search-line" class="size-5" />
+      <span class="text-sm ml-2 hidden lg:flex">Search (coming soon)</span>
+    </div> -->
+
+  {
+    categories?.length ? (
+      <ul class="flex snap-x snap-mandatory overflow-auto items-center space-x-2 lg:space-x-2.5 pb-2">
+        <li class="flex-shrink-0 snap-start">
+          <a
+            href={`/blog`}
+            class={cn(
+              !category ? "select-none" : "",
+              buttonVariants({
+                variant: !category ? "default" : "outline",
+              })
+            )}
+          >
+            All posts
+          </a>
+        </li>
+        {categories.map((item) => (
+          <li class="flex-shrink-0 snap-start">
+            <a
+              href={`/blog/category/${item}`}
+              class={cn(
+                "capitalize",
+                item === category ? "select-none" : "",
+                buttonVariants({
+                  variant: item === category ? "default" : "outline",
+                })
+              )}
+            >
+              {item}
+            </a>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <div />
+    )
+  }
+</div>

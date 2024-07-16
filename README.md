@@ -41,7 +41,7 @@
   - how to edit transcripts
   - success stories
   - daniel's linked in articles
-- [ ] View template - Tracing beam
+- [x] View template - Tracing beam
 
 ### Dev Tools
 

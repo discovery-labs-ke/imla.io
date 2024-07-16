@@ -1,0 +1,91 @@
+---
+import DateFormatter from "@/components/blog/DateFormatter.astro"
+import Heading from "@/components/Heading.astro"
+import { Badge } from "@/components/ui/badge"
+import { Button, buttonVariants } from "@/components/ui/button"
+import BaseLayout from "@/layouts/BaseLayout.astro"
+import { cn } from "@/lib/utils"
+import { Image } from "astro:assets"
+import type { CollectionEntry } from "astro:content"
+import { getCollection } from "astro:content"
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts")
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }))
+}
+
+type Props = CollectionEntry<"posts">
+
+const post = Astro.props
+const { title, description, pubDate, category, thumbnail } = post.data
+const { slug } = Astro.params
+const { Content } = await post.render()
+
+if (!slug || !post) {
+  return new Response(null, {
+    status: 404,
+    statusText: "Not found",
+  })
+}
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+>
+  <div class="relative container max-w-screen-md py-10">
+    <button
+      aria-label="back"
+      transition:animate={"slide"}
+      class={cn(
+        buttonVariants({ variant: "ghost" }),
+        "absolute left-[-200px] top-10 hidden xl:inline-flex text-muted-foreground"
+      )}
+      onclick="history.back()"
+    >
+      {"< Back"}
+    </button>
+
+    <article class="prose dark:prose-invert max-w-none text-balance">
+      <a
+        href={`/blog/category/${category}`}
+        transition:name={`badge-cat-${slug}`}
+      >
+        <Badge className="capitalize">
+          {category}
+        </Badge>
+      </a>
+
+      <Image
+        class="rounded-xl overflow-hidden my-6"
+        width={720}
+        height={360}
+        src={thumbnail}
+        alt={title}
+        transition:name={`img-${slug}`}
+      />
+
+      <div class="flex items-center justify-between">
+        <DateFormatter
+          date={pubDate}
+          slug={post.slug}
+        />
+      </div>
+
+      <Heading
+        tagName="h1"
+        classes="text-4xl my-4"
+        transition:name={`title-${slug}`}
+      >
+        {title}
+      </Heading>
+
+      <p>{description}</p>
+      <hr class="my-6" />
+      <Content />
+    </article>
+  </div>
+</BaseLayout>

@@ -4,6 +4,7 @@ description: Explore the nostalgic world of retro gaming and its influence on mo
 pubDate: 2024-01-02
 thumbnail: ./images/retro-gaming-and-web-design.jpg
 category: updates
+isDraft: false
 ---
 
 In recent years, retro gaming has made a strong comeback, captivating both avid gamers and nostalgic individuals. The appeal of retro games lies in their simplicity, captivating gameplay, and a sense of nostalgia. But what does retro gaming have to do with web design? Surprisingly, there are several interesting connections between the two. In this blog post, we will explore how retro gaming influences web design and why it continues to inspire modern designers.

@@ -2,6 +2,7 @@
 import { Badge } from "@/components/ui/badge"
 import { Image } from "astro:assets"
 import type { CollectionEntry } from "astro:content"
+import DateFormatter from "./DateFormatter.astro"
 
 type Props = CollectionEntry<"posts">
 
@@ -35,19 +36,10 @@ const { title, description, thumbnail, pubDate, category } = post.data
         {category}
       </Badge>
     </a>
-    <time
-      datetime={pubDate.toISOString()}
-      class="font-medium text-muted-foreground"
-      transition:name={"date-" + post.slug}
-    >
-      {
-        pubDate.toLocaleDateString("en-US", {
-          month: "short",
-          day: "2-digit",
-          year: "numeric",
-        })
-      }
-    </time>
+    <DateFormatter
+      date={pubDate}
+      slug={post.slug}
+    />
   </div>
 
   <div>
