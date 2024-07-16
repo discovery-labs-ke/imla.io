@@ -1,0 +1,47 @@
+---
+import type { Page } from "astro"
+import { Icon } from "astro-icon/components"
+import { buttonVariants } from "@/components/ui/button"
+
+type Props = {
+  page: Page
+}
+
+const { page } = Astro.props
+---
+
+<div class="flex gap-2 justify-center items-center pt-14">
+  {
+    page.url.prev && (
+      <a
+        aria-label="previous"
+        transition:animate={"slide"}
+        class={buttonVariants({ variant: "ghost" })}
+        href={page.url.prev}
+      >
+        <Icon
+          name={"prev"}
+          size={20}
+        />
+      </a>
+    )
+  }
+  <p class="text-lg font-medium">
+    Page {page.currentPage} of {page.lastPage}
+  </p>
+  {
+    page.url.next && (
+      <a
+        aria-label="next"
+        transition:animate={"slide"}
+        class={buttonVariants({ variant: "ghost" })}
+        href={page.url.next}
+      >
+        <Icon
+          name={"next"}
+          size={20}
+        />
+      </a>
+    )
+  }
+</div>

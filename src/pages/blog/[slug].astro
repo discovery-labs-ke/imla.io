@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button, buttonVariants } from "@/components/ui/button"
 import BaseLayout from "@/layouts/BaseLayout.astro"
 import { cn } from "@/lib/utils"
+import { Icon } from "astro-icon/components"
 import { Image } from "astro:assets"
 import type { CollectionEntry } from "astro:content"
 import { getCollection } from "astro:content"
@@ -46,7 +47,11 @@ if (!slug || !post) {
       )}
       onclick="history.back()"
     >
-      {"< Back"}
+      <Icon
+        name={"prev"}
+        size={20}
+      />
+      Back
     </button>
 
     <article class="prose dark:prose-invert max-w-none text-balance">

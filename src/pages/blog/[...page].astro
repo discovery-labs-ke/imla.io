@@ -1,14 +1,25 @@
 ---
 import BlogHeader from "@/components/blog/BlogHeader.astro"
+import PageNav from "@/components/blog/PageNav.astro"
 import PostCard from "@/components/blog/PostCard.astro"
-import Heading from "@/components/Heading.astro"
 import BaseLayout from "@/layouts/BaseLayout.astro"
 import SectionWrapper from "@/layouts/SectionWrapper.astro"
+import type { GetStaticPaths } from "astro"
 import { getCollection } from "astro:content"
 
-const posts = (await getCollection("posts", (post) => !post.data.isDraft)).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-)
+export const getStaticPaths = (async ({ paginate }) => {
+  const allPosts = await getCollection("posts", ({ data }) => !data.isDraft)
+  return paginate(
+    allPosts.sort(
+      (a, b) =>
+        new Date(b.data.pubDate).getUTCDate() -
+        new Date(a.data.pubDate).getUTCDate()
+    ),
+    { pageSize: 3 }
+  )
+}) satisfies GetStaticPaths
+
+const { page } = Astro.props
 ---
 
 <BaseLayout
@@ -24,8 +35,9 @@ const posts = (await getCollection("posts", (post) => !post.data.isDraft)).sort(
       <div
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-9 md:gap-y-11 lg:gap-y-16 lg:gap-x-8 pt-4 lg:pt-10"
       >
-        {posts.map((post) => <PostCard {...post} />)}
+        {page.data.map((post) => <PostCard {...post} />)}
       </div>
+      <PageNav page={page} />
     </section>
   </SectionWrapper>
 </BaseLayout>
