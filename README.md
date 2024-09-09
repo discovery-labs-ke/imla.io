@@ -14,6 +14,7 @@
 - [x] Hero (dashboard showcase)
 - [x] Testimonials
 - [x] How it works
+  - [ ] click to read more
 - [ ] Introducing Imla Assistant
 - [x] Features
 - [x] FAQs
@@ -42,6 +43,7 @@
   - success stories
   - daniel's linked in articles
 - [x] View template - Tracing beam
+- [ ] Add author to posts
 
 ### Dev Tools
 
@@ -53,7 +55,7 @@
 
 - [ ] Vercel adapter
 - [ ] Spotlight & Sentry
-- [ ] Astro SEO
+- [x] Astro SEO
 - [ ] Astro sitemaps
 - [ ] Astro analytics
 - [ ] WhatsApp integration

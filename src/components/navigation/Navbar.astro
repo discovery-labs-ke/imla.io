@@ -9,6 +9,7 @@ import type { Props as Link } from "./NavLink.astro"
 import { extractSegmentURL } from "@/lib/utils"
 
 import logo from "@/assets/logo.png"
+import SocialLinks from "../SocialLinks.astro"
 
 const links: Link[] = [
   {
@@ -80,24 +81,7 @@ const links: Link[] = [
         <!-- <Icon name="next" class="size-6" /> -->
       </Button>
       <div class="flex gap-4">
-        <Button
-          variant="outline"
-          size="icon"
-        >
-          <Icon
-            name="facebook"
-            class="h-[1.2rem] w-[1.2rem] text-foreground"
-          />
-        </Button>
-        <Button
-          variant="outline"
-          size="icon"
-        >
-          <Icon
-            name="twitter"
-            class="h-[1.1rem] w-[1.1rem] text-foreground"
-          />
-        </Button>
+        <SocialLinks />
         <ThemeToggle client:idle>
           <Icon
             name="sun"

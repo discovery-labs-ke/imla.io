@@ -1,0 +1,21 @@
+---
+import { socialData } from "@/data/siteData"
+import { buttonVariants } from "@/components/ui/button"
+import { Icon } from "astro-icon/components"
+---
+
+{
+  socialData.map(({ href, title, icon }) => (
+    <a
+      aria-label={title}
+      transition:animate={"slide"}
+      class={buttonVariants({ variant: "outline", size: "icon" })}
+      href={href}
+    >
+      <Icon
+        name={icon}
+        size={20}
+      />
+    </a>
+  ))
+}

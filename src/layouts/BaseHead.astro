@@ -1,7 +1,7 @@
 ---
 import { ViewTransitions } from "astro:transitions"
 import ThemeHeadScript from "@/components/theme-head-script.astro"
-
+import { SEO } from "astro-seo"
 import { baseData } from "@/data/siteData"
 
 type Props = {
@@ -36,7 +36,20 @@ const { title = baseData.title, description = baseData.description } =
     name="description"
     content={description}
   />
-  <title>{title}</title>
+  <SEO
+    title={title}
+    description={description}
+    openGraph={{
+      basic: {
+        title: title,
+        type: "website",
+        image: baseData.image.src,
+      },
+    }}
+    twitter={{
+      creator: "@snkiiyuru",
+    }}
+  />
   <ThemeHeadScript />
   <ViewTransitions />
 </head>

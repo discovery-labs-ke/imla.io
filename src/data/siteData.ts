@@ -3,17 +3,16 @@ export const baseData = {
   description: `Save time, Do more. 
   Automatic speech recognition software tailored for Africa.
   `,
+  image: {
+    src: "/images/image-default.png",
+    alt: "Imla website",
+  },
 }
 
 export const socialData = [
   {
-    href: "https://github.com/skiiyuru",
-    icon: "github",
-    title: "Github",
-  },
-  {
     href: "https://www.linkedin.com/in/skiiyuru/",
-    icon: "linkedin",
+    icon: "in",
     title: "Linked In",
   },
   {
