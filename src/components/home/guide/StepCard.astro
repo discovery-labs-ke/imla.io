@@ -18,9 +18,16 @@ const { title, description, thumbnail } = data
 ---
 
 <Card
-  className="overflow-hidden max-w-sm border-2 transition-transform hover:scale-105"
+  className="overflow-hidden max-w-sm border-2 transition-transform hover:scale-105 h-72  "
 >
-  <Image src={thumbnail} alt={title} width={400} format="avif" />
+  <Image
+    src={thumbnail}
+    alt={title}
+    width={400}
+    format="avif"
+    class={"h-2/3"}
+    quality={"mid"}
+  />
   <CardHeader className="py-3">
     <CardTitle className="text-balance">{title}</CardTitle>
     <CardDescription className="text-balance leading-relaxed">

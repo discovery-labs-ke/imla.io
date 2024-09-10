@@ -24,6 +24,7 @@
 
 - [x] Pricing table
 - [x] Cost calculator + print
+  - [ ] Formula
 - [x] FAQ
 
 ### Contact sales
@@ -38,12 +39,26 @@
 
 - [x] List
   - Imla Assistant - How it works
-  - getting started guide
-  - how to edit transcripts
+  - getting started guide (from Grace)
   - success stories
+    - Bernard
+    - Mburu
   - daniel's linked in articles
 - [x] View template - Tracing beam
 - [ ] Add author to posts
+
+### About page
+
+- [ ] Mission statement
+- [ ] Vision
+- [ ] More about the Imla product
+
+### Content
+
+- [ ] Articles from Daniel
+- [ ] Testimonials (5)
+- [ ] How Imla works
+- [ ] Features
 
 ### Dev Tools
 
@@ -53,9 +68,9 @@
 
 ### Deployment tools
 
-- [ ] Vercel adapter
-- [ ] Spotlight & Sentry
 - [x] Astro SEO
-- [ ] Astro sitemaps
-- [ ] Astro analytics
+- [x] Astro sitemaps
+- [ ] Sentry
+- [ ] Posthog
 - [ ] WhatsApp integration
+- [x] Netlify adapter??

@@ -1,3 +1,3 @@
-title: Sentiment analysis
-description: To be, or not to be, that is the question; Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them; to die, to sleep.
+title: Speaker Separation
+description: Imla's speaker identification technology goes beyond simple recognition. It can automatically differentiate between multiple speakers in your audio, providing timestamps for each individual's contribution. This feature is invaluable for interviews, meetings, or any situation where you need to analyze specific parts of a conversation.
 thumbnail: ./thumbnails/feature-1.png
