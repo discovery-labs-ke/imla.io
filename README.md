@@ -71,6 +71,6 @@
 - [x] Astro SEO
 - [x] Astro sitemaps
 - [ ] Sentry
-- [ ] Posthog
+- [x] Posthog
 - [ ] WhatsApp integration
 - [x] Netlify adapter??
