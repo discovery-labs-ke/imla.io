@@ -12,7 +12,7 @@
 ### Home
 
 - [x] Hero (dashboard showcase)
-- [x] Testimonials
+- [x] ## Testimonials
 - [x] How it works
   - [ ] click to read more
 - [ ] Introducing Imla Assistant
@@ -25,11 +25,13 @@
 - [x] Pricing table
 - [x] Cost calculator + print
   - [ ] Formula
+  - [x] Printing
 - [x] FAQ
 
 ### Contact sales
 
 - [x] Contact sales form
+  - [ ] API integration
 
 ### Changelog
 
@@ -39,7 +41,7 @@
 
 - [x] List
   - Imla Assistant - How it works
-  - getting started guide (from Grace)
+  - [x] getting started guide
   - success stories
     - Bernard
     - Mburu
@@ -57,8 +59,8 @@
 
 - [ ] Articles from Daniel
 - [ ] Testimonials (5)
-- [ ] How Imla works
-- [ ] Features
+- [x] How Imla works
+- [x] Features
 
 ### Dev Tools
 

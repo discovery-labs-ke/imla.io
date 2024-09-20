@@ -19,10 +19,7 @@ import { Icon } from "astro-icon/components"
     aria-label=""
     class="space-y-14 lg:space-y-32 flex flex-col items-center"
   >
-    <Heading
-      tagName="h1"
-      classes="text-center"
-    >
+    <Heading tagName="h1" classes="text-center">
       Need a lot more minutes?
       <br />
       Estimate your <span class="text-primary">bulk transcription</span> cost
@@ -30,7 +27,7 @@ import { Icon } from "astro-icon/components"
 
     <Card className="w-full sm:max-w-2xl lg:text-lg">
       <CardHeader>
-        <div class="flex justify-between">
+        <div class="lg:flex justify-between">
           <div>
             <CardTitle className="tracking-wide">
               Bulk transcription
@@ -38,28 +35,9 @@ import { Icon } from "astro-icon/components"
             <CardDescription>Starting from 500 hours</CardDescription>
           </div>
 
-          <Button
-            aria-label="Print quote"
-            variant="outline"
-            size="icon"
-            className="md:hidden"
-          >
-            <Icon
-              name="print"
-              class="size-5"
-            />
-          </Button>
-
-          <Button
-            aria-label="Print quote"
-            variant="outline"
-            className="hidden md:flex"
-          >
-            <span>Print quote</span>
-            <Icon
-              name="print"
-              class="size-5 ml-2"
-            />
+          <Button aria-label="Print quote" variant="outline">
+            <a href="/pricing/estimate">Print quote</a>
+            <Icon name="print" class="size-5 ml-2" />
           </Button>
         </div>
       </CardHeader>
