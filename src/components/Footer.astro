@@ -9,37 +9,28 @@ import { footerLinks, socialData } from "@/data/siteData"
 import SocialLinks from "./SocialLinks.astro"
 ---
 
-<footer
-  aria-label="footer-heading"
-  class="border-t bg-card"
->
-  <h2
-    class="text-foreground sr-only"
-    id="footer-heading"
-  >
-    Footer
-  </h2>
+<footer aria-label="footer-heading" class="border-t bg-card">
+  <h2 class="text-foreground sr-only" id="footer-heading">Footer</h2>
   <div
     class="mx-auto w-full px-4 md:px-6 lg:px-8 xl:px-[3.75rem] max-w-7xl py-12 lg:py-16"
   >
     <div class="lg:grid lg:grid-cols-4 xl:gap-8">
       <div class="flex flex-col justify-between gap-y-4 xl:col-span-2">
         <div class="flex flex-col gap-y-6">
-          <Image
-            src={logo}
-            alt="Imla logo"
-            width={100}
-            loading="lazy"
-          />
+          <Image src={logo} alt="Imla logo" width={100} loading="lazy" />
 
           <div class="flex gap-x-5">
-            <SocialLinks />
+            <!-- <SocialLinks /> -->
+
+            <a
+              href="https://www.linkedin.com/company/the-discovery-centre-limited/"
+              class={buttonVariants({ variant: "outline", size: "icon" })}
+            >
+              <Icon name="linkedin" class="size-5 text-muted-foreground" />
+            </a>
 
             <div class="flex gap-2 items-center border rounded-full px-4 w-fit">
-              <Icon
-                name="phone"
-                class="size-5 text-muted-foreground"
-              />
+              <Icon name="phone" class="size-5 text-muted-foreground" />
               <p class="mt-[3px] text-muted-foreground">0113291109</p>
             </div>
           </div>
@@ -62,10 +53,7 @@ import SocialLinks from "./SocialLinks.astro"
                     {group.name}
                   </span>
                 </h3>
-                <ul
-                  class="flex flex-col gap-y-2"
-                  role="list"
-                >
+                <ul class="flex flex-col gap-y-2" role="list">
                   {group.children.map((link) => (
                     <li>
                       <span class="text-muted-foreground text-sm block">

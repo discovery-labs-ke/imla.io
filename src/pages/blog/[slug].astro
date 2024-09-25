@@ -21,7 +21,8 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"posts">
 
 const post = Astro.props
-const { title, description, pubDate, category, thumbnail } = post.data
+const { title, description, pubDate, category, thumbnail, author, avatar } =
+  post.data
 const { slug } = Astro.params
 const { Content } = await post.render()
 
@@ -33,10 +34,7 @@ if (!slug || !post) {
 }
 ---
 
-<BaseLayout
-  title={"Imla blog | " + title}
-  description={description}
->
+<BaseLayout title={"Imla blog | " + title} description={description}>
   <div class="relative container max-w-screen-md py-10">
     <button
       aria-label="back"
@@ -47,10 +45,7 @@ if (!slug || !post) {
       )}
       onclick="history.back()"
     >
-      <Icon
-        name={"prev"}
-        size={20}
-      />
+      <Icon name={"prev"} size={20} />
       Back
     </button>
 
@@ -73,22 +68,35 @@ if (!slug || !post) {
         transition:name={`img-${slug}`}
       />
 
-      <div class="flex items-center justify-between">
-        <DateFormatter
-          date={pubDate}
-          slug={post.slug}
-        />
+      <div class="space-y-1">
+        <Heading
+          tagName="h1"
+          classes="text-4xl my-4"
+          transition:name={`title-${slug}`}
+        >
+          {title}
+        </Heading>
+
+        <div class="md:flex md:justify-between gap-1 space-y-1 md:space-y-0">
+          <div class="flex space-x-4 items-center h-11">
+            <span class="text-muted-foreground lg:text-lg">By</span>
+            <div class="flex gap-2 items-center">
+              <Image
+                src={avatar}
+                alt="author-avatar"
+                class="rounded-full border-2"
+                width={50}
+                height={50}
+              />
+              <span class="text-muted-foreground lg:text-lg">{author}</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <DateFormatter date={pubDate} slug={post.slug} />
+          </div>
+        </div>
       </div>
 
-      <Heading
-        tagName="h1"
-        classes="text-4xl my-4"
-        transition:name={`title-${slug}`}
-      >
-        {title}
-      </Heading>
-
-      <p>{description}</p>
       <hr class="my-6" />
       <Content />
     </article>

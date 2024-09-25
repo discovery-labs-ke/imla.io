@@ -1,6 +1,6 @@
 ---
 import Heading from "@/components/Heading.astro"
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import SectionWrapper from "@/layouts/SectionWrapper.astro"
 import { Icon } from "astro-icon/components"
 ---
@@ -15,10 +15,12 @@ import { Icon } from "astro-icon/components"
         Starting is as easy as clicking the button below, and we will take you
         through every step of the way.
       </p>
-      <Button variant="default" className="w-fit text-lg" size="lg"
-        >Get started
-        <Icon name="next" class="ml-1 size-6" />
-      </Button>
+      <a
+        href="https://app.imla.io/register"
+        class={`${buttonVariants({ size: "lg" })} w-fit text-xl`}
+      >
+        Get Started
+      </a>
     </div>
   </section>
 </SectionWrapper>

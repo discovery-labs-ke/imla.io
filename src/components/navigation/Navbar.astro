@@ -1,12 +1,11 @@
 ---
-import { Icon } from "astro-icon/components"
 import { ThemeToggle } from "@/components/ThemeToggle"
-import { Button } from "@/components/ui/button"
-import NavList from "./NavList.astro"
+import { buttonVariants } from "@/components/ui/button"
+import { Icon } from "astro-icon/components"
 import MobileNav from "./MobileNav"
-import NavLink from "./NavLink.astro"
 import type { Props as Link } from "./NavLink.astro"
-import { extractSegmentURL } from "@/lib/utils"
+import NavLink from "./NavLink.astro"
+import NavList from "./NavList.astro"
 
 import logo from "@/assets/logo.png"
 import SocialLinks from "../SocialLinks.astro"
@@ -31,7 +30,7 @@ const links: Link[] = [
   },
   {
     title: "Login",
-    href: "/login",
+    href: "https://app.imla.io/login",
   },
 ]
 ---
@@ -46,12 +45,7 @@ const links: Link[] = [
       <NavList data={links} />
     </nav>
 
-    <NavLink
-      img={logo}
-      href={"/"}
-      title={"Imla"}
-      classes="md:hidden"
-    />
+    <NavLink img={logo} href={"/"} title={"Imla"} classes="md:hidden" />
 
     <div class="md:flex md:gap-4 hidden">
       <ThemeToggle client:idle>
@@ -64,22 +58,21 @@ const links: Link[] = [
           class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
         />
       </ThemeToggle>
-      <Button
-        variant="default"
-        className="w-fit"
-        >Get started
-        <!-- <Icon name="next" class="size-6" /> -->
-      </Button>
+
+      <a href="https://app.imla.io/register" class={buttonVariants()} )}>
+        Get Started
+      </a>
     </div>
 
     <MobileNav client:load>
       <NavList data={links} />
-      <Button
-        variant="default"
-        className="w-fit md:hidden"
-        >Get started
-        <!-- <Icon name="next" class="size-6" /> -->
-      </Button>
+      <a
+        href="https://app.imla.io/register"
+        class={`${buttonVariants({ size: "lg" })} w-fit md:hidden`}
+      >
+        Get Started
+      </a>
+
       <div class="flex gap-4">
         <SocialLinks />
         <ThemeToggle client:idle>

@@ -51,6 +51,8 @@ const posts = defineCollection({
       pubDate: z.date(),
       isDraft: z.boolean().optional(),
       category: z.string(),
+      author: z.string(),
+      avatar: image(),
     }),
 })
 

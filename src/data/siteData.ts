@@ -11,14 +11,9 @@ export const baseData = {
 
 export const socialData = [
   {
-    href: "https://www.linkedin.com/in/skiiyuru/",
-    icon: "in",
+    href: "https://www.linkedin.com/company/the-discovery-centre-limited/",
+    icon: "linkedin",
     title: "Linked In",
-  },
-  {
-    href: "https://twitter.com/snkiiyuru",
-    icon: "twitter",
-    title: "Twitter",
   },
 ]
 
@@ -38,15 +33,15 @@ export const footerLinks: FooterGroup[] = [
     children: [
       {
         name: "Features",
-        href: "#features",
+        href: "/#features",
       },
       {
         name: "FAQ",
-        href: "#faq",
+        href: "/#faq",
       },
       {
         name: "Pricing",
-        href: "#pricing",
+        href: "/pricing",
       },
     ],
   },

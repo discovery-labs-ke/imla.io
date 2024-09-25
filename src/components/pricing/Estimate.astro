@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card"
 
 import EstimateForm from "./EstimateForm"
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import { Icon } from "astro-icon/components"
 ---
 
@@ -35,10 +35,13 @@ import { Icon } from "astro-icon/components"
             <CardDescription>Starting from 500 hours</CardDescription>
           </div>
 
-          <Button aria-label="Print quote" variant="outline">
-            <a href="/pricing/estimate">Print quote</a>
+          <a
+            href="/pricing/estimate"
+            class={buttonVariants({ variant: "outline" })}
+          >
+            Print quote
             <Icon name="print" class="size-5 ml-2" />
-          </Button>
+          </a>
         </div>
       </CardHeader>
       <CardContent className="grid grid-cols-1 lg:grid-cols-2 gap-8">

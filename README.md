@@ -39,28 +39,20 @@
 
 ### Blog
 
-- [x] List
-  - Imla Assistant - How it works
-  - [x] getting started guide
-  - success stories
-    - Bernard
-    - Mburu
-  - daniel's linked in articles
+- Imla Assistant - How it works
+- [x] getting started guide
+- success stories
+  - [ ] Bernard
+  - [x] Mburu
+  - [x] daniel's linked in articles
 - [x] View template - Tracing beam
-- [ ] Add author to posts
+- [x] Add author to posts
 
 ### About page
 
 - [ ] Mission statement
 - [ ] Vision
 - [ ] More about the Imla product
-
-### Content
-
-- [ ] Articles from Daniel
-- [ ] Testimonials (5)
-- [x] How Imla works
-- [x] Features
 
 ### Dev Tools
 
