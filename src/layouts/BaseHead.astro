@@ -3,7 +3,7 @@ import { ViewTransitions } from "astro:transitions"
 import ThemeHeadScript from "@/components/theme-head-script.astro"
 import { SEO } from "astro-seo"
 import { baseData } from "@/data/siteData"
-import Posthog from "@/components/monitoring/posthog.astro"
+// import Posthog from "@/components/monitoring/posthog.astro"
 
 type Props = {
   title?: string
@@ -37,5 +37,5 @@ const { title = baseData.title, description = baseData.description } =
   />
   <ThemeHeadScript />
   <ViewTransitions />
-  <Posthog />
+  <!-- <Posthog /> -->
 </head>
