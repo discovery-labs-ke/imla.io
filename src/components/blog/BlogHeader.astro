@@ -15,10 +15,7 @@ const posts = await getCollection("posts")
 const categories = [...new Set(posts.map((post) => post.data.category).flat())]
 ---
 
-<Heading
-  tagName="h1"
-  classes="text-center max-w-3xl pb-14 lg:pb-32"
->
+<Heading tagName="h1" classes="text-center max-w-3xl pb-14 lg:pb-32">
   {title}
 </Heading>
 
@@ -31,9 +28,9 @@ const categories = [...new Set(posts.map((post) => post.data.category).flat())]
     </div> -->
 
   {
-    categories?.length ? (
-      <ul class="flex snap-x snap-mandatory overflow-auto items-center space-x-2 space-y-2 lg:space-x-2.5 pb-2 flex-wrap justify-center">
-        <li class="flex-shrink-0 snap-start">
+    categories?.length && (
+      <ul class="flex flex-wrap justify-center items-end overflow-auto space-x-2 space-y-2 lg:space-x-2.5 pb-2 ">
+        <li class="">
           <a
             href={`/blog`}
             class={cn(
@@ -47,7 +44,7 @@ const categories = [...new Set(posts.map((post) => post.data.category).flat())]
           </a>
         </li>
         {categories.map((item) => (
-          <li class="flex-shrink-0 snap-start">
+          <li class="">
             <a
               href={`/blog/category/${item}`}
               class={cn(
@@ -63,8 +60,6 @@ const categories = [...new Set(posts.map((post) => post.data.category).flat())]
           </li>
         ))}
       </ul>
-    ) : (
-      <div />
     )
   }
 </div>

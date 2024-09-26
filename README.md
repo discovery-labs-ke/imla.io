@@ -68,3 +68,7 @@
 - [x] Posthog
 - [ ] WhatsApp integration
 - [x] Netlify adapter??
+
+### Bugs
+
+- [x] View transitions cause theme reset when changing pages

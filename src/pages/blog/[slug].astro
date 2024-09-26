@@ -41,7 +41,7 @@ if (!slug || !post) {
       transition:animate={"slide"}
       class={cn(
         buttonVariants({ variant: "ghost" }),
-        "absolute left-[-200px] top-10 hidden xl:inline-flex text-muted-foreground"
+        "lg:absolute lg:left-[-200px] lg:top-10 xl:inline-flex text-muted-foreground"
       )}
       onclick="history.back()"
     >
@@ -98,6 +98,7 @@ if (!slug || !post) {
       </div>
 
       <hr class="my-6" />
+
       <Content />
     </article>
   </div>

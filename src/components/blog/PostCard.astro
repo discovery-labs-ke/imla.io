@@ -36,19 +36,13 @@ const { title, description, thumbnail, pubDate, category } = post.data
         {category}
       </Badge>
     </a>
-    <DateFormatter
-      date={pubDate}
-      slug={post.slug}
-    />
+    <DateFormatter date={pubDate} slug={post.slug} />
   </div>
 
   <div>
-    <a
-      href={`/blog/${post.slug}/`}
-      class="group-hover:underline"
-    >
+    <a href={`/blog/${post.slug}/`} class="group-hover:underline">
       <h2
-        class="font-heading text-xl md:text-2xl leading-snug line-clamp-3"
+        class="font-heading text-xl md:text-2xl leading-snug line-clamp-3 font-bold"
         transition:name={"title-" + post.slug}
       >
         {title}

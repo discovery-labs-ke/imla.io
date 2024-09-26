@@ -1,37 +1,27 @@
 ---
-title: Getting Started with Imla
-description: Follow these simple steps to begin transcribing with Imla
+title: "Mastering Transcription with Imla: A Breezy Guide"
+description: Ready to ditch the note-taking frenzy and get your audio effortlessly transcribed? Imla's here to save the day! Here's a quick rundown on how to unleash its magic
 pubDate: 2024-09-23
-thumbnail: ./images/thumbnails/default.jpg
+thumbnail: ./images/step-6.png
 isDraft: false
 category: user guides
 author: Grace Mueni
 avatar: ./images/avatars/default.png
 ---
 
-1. Visit Imla’s Website
-   Open your web browser and navigate to [imla](https://imla.io.)
+1. **Head over to Imla's lair:** Just pop open your browser and visit [imla](https://imla.io). Click the "Get Started" button, and you're halfway there!
 
-2. Try it for free
-   Click the "Try it Free" button on the homepage.
-   ![Image](./images/thumbnails/default.jpg)
+2. **Craft your account:** Whip up a secure password and use a valid email address to register. Keep an eye on your inbox for a verification email – click that link to activate your account and get ready to roll.
 
-3. Set Up Your Account
-   Use a valid email address and create a secure password to register. Once signed up, check your inbox for a verification link, and click on it to activate your account.
+3. **Time to unleash the audio:** Once verified, click the "New Order" button and choose your audio file from your device (think MP3s, WAVs – the usual suspects). Just remember, files can't be bigger than 500 MB.
+   ![step-3](./images/step-3.png)
 
-4. Upload Your Audio
-   After verifying your account, click on the "New Order" button to upload an audio file from your local storage.
-   Supported File Formats include: `.m4a`, `.mp3`, `.wav`, `.mp4`, `.aac` with a maximum file size of _500 MB_
+4. **Checkout or choose your plan:** If you have some credits stashed away, hit "Checkout" in the summary section. Otherwise, pick a plan that suits your transcription needs and buy it using MPESA.
+   ![step-3](./images/step-4.png)
 
-5. Choose Your Language
-   Once your file is uploaded, you can either specify the spoken language or let Imla automatically detect it.
-6. Complete the Order
-   If you have sufficient credits, simply click the "Checkout" button in the summary section. Otherwise, choose a plan that fits your transcription needs.
+5. **Track your masterpiece's progress:** Boom! Your file is now chilling in the "My Files" section with an "In progress" status. When it switches to "Ready to Edit," your transcript is ready to shine!
 
-7. Track Progress
-   Congratulations! Your file is now in the "My Files" section with a status of "In progress". When the status changes to "Ready to Edit", your file has been successfully transcribed.
-8. Edit and Download
-   Click on the "Ready to Edit" button to review and make any necessary edits. You can also use the Imla AI assistant to extract key insights from your transcript.
-   When you're satisfied with the results, click the "Download" button to download your transcript.
+6. **Polish and download:** Click "Ready to Edit" to review your transcript and make any tweaks. You can even use Imla's AI assistant to extract key points – fancy, right? Once you're happy, hit "Download" to save your transcript.
+   ![step-3](./images/step-6.png)
 
-Happy transcribing!
+And there you have it! With these simple steps, you'll be churning out perfectly transcribed audio in no time. Now go forth and conquer that audio overload!

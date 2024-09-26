@@ -15,6 +15,7 @@ export function ThemeToggle({ children }: { children: React.ReactNode }) {
 
   React.useEffect(() => {
     const isDarkMode = document.documentElement.classList.contains("dark")
+
     setThemeState(isDarkMode ? "dark" : "theme-light")
   }, [])
 
@@ -23,7 +24,18 @@ export function ThemeToggle({ children }: { children: React.ReactNode }) {
       theme === "dark" ||
       (theme === "system" &&
         window.matchMedia("(prefers-color-scheme: dark)").matches)
-    document.documentElement.classList[isDark ? "add" : "remove"]("dark")
+
+    function toggle() {
+      document.documentElement.classList[isDark ? "add" : "remove"]("dark")
+    }
+
+    toggle()
+
+    document.addEventListener("astro:after-swap", toggle)
+
+    return () => {
+      document.removeEventListener("astro:after-swap", toggle)
+    }
   }, [theme])
 
   return (
