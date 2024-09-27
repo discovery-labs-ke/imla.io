@@ -85,10 +85,9 @@ export const pricingBundles = [
 ]
 
 export const pricingBenefits = [
-  "Speaker identification and timestamps",
-  "Email support",
+  "Transcript editor & audio player",
+  "Speaker identification & timestamps",
   "Multiple download formats",
-  "Sentiment analysis",
-  "Summary generation",
-  "And many more data analysis features powered by Imla Assistant",
+  "Email support",
+  "Imla AI assistant for: Sentiment analysis, Summary generation & much more to get the most out of your data",
 ]
