@@ -14,3 +14,14 @@ export function extractSegmentURL(path: string) {
 export function capitalizer(text: string) {
   return text.charAt(0).toUpperCase() + text.slice(1)
 }
+
+
+export function formatToCurrency(value: number) {
+  return new Intl.NumberFormat("en-KE", {
+  style: "currency",
+  currency: "KES",
+  currencyDisplay: "code",
+})
+  .format(value)
+  .replace("KES", "KES.")
+}

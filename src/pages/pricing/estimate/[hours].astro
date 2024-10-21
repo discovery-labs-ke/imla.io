@@ -1,0 +1,103 @@
+---
+export const prerender = false
+import { Image } from "astro:assets"
+
+// css & fonts
+import "@/styles/globals.css"
+import "@fontsource-variable/fraunces"
+import "@fontsource/poppins"
+
+import { formatToCurrency } from "@/lib/utils"
+
+const currentDate = new Date()
+const formattedDate = new Intl.DateTimeFormat("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+}).format(currentDate)
+
+let DEFAULT_HOURS = 100
+const { hours } = Astro.params
+DEFAULT_HOURS = hours ? parseInt(hours) : DEFAULT_HOURS
+const RATE = 48 // 48bob per hr
+const cost = DEFAULT_HOURS * RATE
+
+const formattedAmount = formatToCurrency(cost)
+---
+
+<div class="relative container max-w-screen-md py-10 h-full border">
+  <!-- Logos Section -->
+  <div class="flex justify-between items-center mb-8">
+    <Image src="/images/logo.png" alt="logo-1" width={80} height={100} />
+    <Image src="/images/labs-logo.png" alt="logo-2" width={150} height={100} />
+  </div>
+
+  <!-- Header Section -->
+  <div class="text-center mb-12">
+    <h1 class="text-3xl font-bold uppercase tracking-wider">Quote</h1>
+    <p class="text-gray-600">For Transcription Services</p>
+    <p class="text-gray-500">{formattedDate}</p>
+  </div>
+
+  <!-- Table Section -->
+  <table class="w-full mb-12 border border-gray-300 flex-1">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="text-left p-4">Description</th>
+        <th class="text-right p-4">Price (KES)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="border-t border-gray-300">
+        <td class="p-4">{DEFAULT_HOURS} Hours</td>
+        <td class="p-4 text-right">-</td>
+      </tr>
+      <tr class="border-t border-gray-300">
+        <td class="p-4">Bulk transcription (per hour)</td>
+        <td class="p-4 text-right">{formatToCurrency(48)}</td>
+      </tr>
+
+      <tfoot class="bg-gray-200">
+        <tr>
+          <th class="text-left p-4">Total</th>
+          <td class="text-right p-4">{formattedAmount}</td>
+        </tr>
+      </tfoot>
+      <!-- Add more rows as needed -->
+    </tbody>
+  </table>
+
+  <!-- Footer Section -->
+  <div class="flex justify-between py-10 text-sm">
+    <div class="gap-2">
+      <p>DISCOVERY LABS LIMITED</p>
+      <p>TEL: +254 720 572303</p>
+    </div>
+    <div class="gap-2 text-right">
+      <p>P.O. BOX 79671-00200 NAIROBI</p>
+      <p>43 DOVE CLOSE, KUWINDA ROAD, KAREN</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  @media print {
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      break-inside: avoid;
+    }
+  }
+</style>
+
+<script is:inline>
+  print()
+</script>

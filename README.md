@@ -69,6 +69,8 @@
 - [ ] WhatsApp integration
 - [x] Netlify adapter??
 
-### Bugs
+### Bugs & Fixes
 
 - [x] View transitions cause theme reset when changing pages
+- [x] Use native print() api to generate a quote (works on mobile)
+- [x] Uninstall react pdf
