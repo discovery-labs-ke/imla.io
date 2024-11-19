@@ -37,18 +37,37 @@ export default function ContactForm() {
   })
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values)
+
+    try {
+      const res = await fetch("https://imla.io//api/contact_sales", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application-json",
+        },
+        body: JSON.stringify({
+          name: values.name,
+          description: values.message,
+        }),
+      })
+
+      if (!res.ok) {
+        throw new Error(`Response status: ${res.status}`)
+      }
+
+      const data = await res.json()
+      console.log("🚀 ~ onSubmit ~ data:", data)
+    } catch (error) {
+      console.log("🚀 ~ onSubmit ~ error:", error)
+    }
   }
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8"
-      >
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <div className="space-y-4">
           <FormField
             control={form.control}
@@ -57,10 +76,7 @@ export default function ContactForm() {
               <FormItem>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input
-                    placeholder="E.g. John Marx"
-                    {...field}
-                  />
+                  <Input placeholder="E.g. John Marx" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -88,10 +104,7 @@ export default function ContactForm() {
             )}
           />
         </div>
-        <Button
-          aria-label="Estimate cost"
-          type="submit"
-        >
+        <Button aria-label="Estimate cost" type="submit">
           Send message
         </Button>
       </form>

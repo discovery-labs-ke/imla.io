@@ -63,11 +63,11 @@ export const footerLinks: FooterGroup[] = [
     children: [
       {
         name: "Privacy Policy",
-        href: "/legal/privacy.pdf",
+        href: "https://utfs.io/f/7y5sai86eAK4lD0lBbscJwT24eXsrKLZPQv6pjm7axIMOiWu",
       },
       {
         name: "Terms of Service",
-        href: "/legal/terms.pdf",
+        href: "https://utfs.io/f/7y5sai86eAK47hBw86eAK4GwOlvgRsiL81hDdQYWzoZTntbS",
       },
     ],
   },

@@ -21,7 +21,7 @@ type Props = {
 }
 
 const formSchema = z.object({
-  hours: z.number().int().gte(100).positive().safe().finite(),
+  hours: z.coerce.number().int().min(100).safe().positive().finite(),
 })
 
 export default function EstimateForm({ onSubmit }: Props) {
@@ -60,13 +60,7 @@ export default function EstimateForm({ onSubmit }: Props) {
               <FormItem>
                 <FormLabel>Hours</FormLabel>
                 <FormControl>
-                  <Input
-                    type="number"
-                    placeholder="minimum: 100"
-                    {...field}
-                    min={100}
-                    onChange={(e) => field.onChange(Number(e.target.value))}
-                  />
+                  <Input type="number" placeholder="minimum: 100" {...field} />
                 </FormControl>
 
                 <FormMessage />

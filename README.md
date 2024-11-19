@@ -2,13 +2,6 @@
 
 ## To do
 
-### General
-
-- [x] View transitions
-- [ ] Nav - add navigation to sections: features, guide etc
-- [x] Footer
-- [ ] UI screenshots
-
 ### Home
 
 - [x] Hero (dashboard showcase)
@@ -24,7 +17,7 @@
 
 - [x] Pricing table
 - [x] Cost calculator + print
-  - [ ] Formula
+  - [x] Formula
   - [x] Printing
 - [x] FAQ
 
@@ -64,10 +57,10 @@
 
 - [x] Astro SEO
 - [x] Astro sitemaps
-- [ ] Sentry
+- [x] Sentry
 - [x] Posthog
 - [ ] WhatsApp integration
-- [x] Netlify adapter??
+- [ ] Vercel adapter
 
 ### Bugs & Fixes
 
