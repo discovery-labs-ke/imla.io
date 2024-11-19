@@ -32,8 +32,8 @@ const formattedAmount = formatToCurrency(cost)
 <div class="relative container max-w-screen-md py-10 h-full">
   <!-- Logos Section -->
   <div class="flex justify-between items-center mb-8">
-    <Image src={logo} alt="logo-1" width={80} height={100} />
-    <Image src={labs_logo} alt="logo-2" width={150} height={100} />
+    <Image id="logo1" src={logo} alt="logo-1" width={80} height={100} />
+    <Image id="logo2" src={labs_logo} alt="logo-2" width={150} height={100} />
   </div>
 
   <!-- Header Section -->
@@ -102,5 +102,20 @@ const formattedAmount = formatToCurrency(cost)
 </style>
 
 <script is:inline>
-  print()
+  // Wait for both logos to load
+  const logo1 = document.getElementById("logo1")
+  const logo2 = document.getElementById("logo2")
+
+  const checkImagesLoaded = () => {
+    if (logo1.complete && logo2.complete) {
+      print()
+    }
+  }
+
+  // Attach event listeners
+  logo1.onload = checkImagesLoaded
+  logo2.onload = checkImagesLoaded
+
+  // Handle case where images are already cached
+  window.onload = checkImagesLoaded
 </script>
