@@ -32,4 +32,5 @@ export default defineConfig({
   ],
   output: "hybrid",
   adapter: netlify(),
+  site: "https://imla.io",
 })

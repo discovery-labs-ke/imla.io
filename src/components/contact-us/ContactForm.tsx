@@ -43,7 +43,7 @@ export default function ContactForm() {
     console.log(values)
 
     try {
-      const res = await fetch("https://imla.io//api/contact_sales", {
+      const res = await fetch("https://imla.io/api/contact_sales", {
         method: "POST",
         headers: {
           "Content-Type": "application-json",
