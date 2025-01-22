@@ -1,0 +1,54 @@
+---
+import Heading from "@/components/Heading.astro"
+import BaseLayout from "@/layouts/BaseLayout.astro"
+import SectionWrapper from "@/layouts/SectionWrapper.astro"
+import { Icon } from "astro-icon/components"
+
+const data = [
+  {
+    title: "Mission",
+    description: "Fostering technology inclusion",
+  },
+  {
+    title: "Vision",
+    description:
+      "Develop technology solutions that address Africa’s social and economic issues",
+  },
+  {
+    title: "Values",
+    description:
+      "Develop technology solutions that address Africa’s social and economic issues",
+  },
+]
+---
+
+<BaseLayout title="About Imla" description="Our mission, vision and team">
+  <SectionWrapper>
+    <section
+      aria-label="About us section"
+      class="grid md:grid-cols-2 lg:grid-cols-3 gap-y-14 md:gap-y-24 lg:gap-y-32"
+    >
+      <Heading tagName="h1" classes="text-center md:col-span-2 lg:col-span-3 ">
+        Who We Are
+      </Heading>
+      {
+        data.map((item) => (
+          <article class="text-center">
+            <Icon name={item.title.toLowerCase()} class={"size-24"} />
+            <Heading tagName="h3" classes="text-primary my-4">
+              {item.title}
+            </Heading>
+            <p class="text-balance max-w-xl">{item.description}</p>
+          </article>
+        ))
+      }
+    </section>
+  </SectionWrapper>
+</BaseLayout>
+
+<style>
+  svg,
+  p {
+    margin: 0 auto;
+  }
+</style>
