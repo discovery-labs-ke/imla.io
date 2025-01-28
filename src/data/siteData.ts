@@ -11,7 +11,7 @@ export const baseData = {
 
 export const socialData = [
   {
-    href: "https://www.linkedin.com/company/the-discovery-labs/",
+    href: "https://www.linkedin.com/company/discovery-labs-limited/",
     icon: "linkedin",
     title: "Linked In",
   },
