@@ -1,40 +1,40 @@
 ---
-import { ThemeToggle } from "@/components/ThemeToggle"
-import { buttonVariants } from "@/components/ui/button"
-import { Icon } from "astro-icon/components"
-import MobileNav from "./MobileNav"
-import type { Props as Link } from "./NavLink.astro"
-import NavLink from "./NavLink.astro"
-import NavList from "./NavList.astro"
+import { ThemeToggle } from '@/components/ThemeToggle'
+import { buttonVariants } from '@/components/ui/button'
+import { Icon } from 'astro-icon/components'
+import MobileNav from './MobileNav'
+import type { Props as Link } from './NavLink.astro'
+import NavLink from './NavLink.astro'
+import NavList from './NavList.astro'
 
-import logo from "@/assets/logo.png"
-import SocialLinks from "../SocialLinks.astro"
+import logo from '@/assets/logo.png'
+import SocialLinks from '../SocialLinks.astro'
 
 const links: Link[] = [
   {
-    title: "Imla",
-    href: "/",
+    title: 'Imla',
+    href: '/',
     img: logo,
   },
   {
-    title: "Pricing",
-    href: "/pricing",
+    title: 'About',
+    href: '/about',
   },
   {
-    title: "About",
-    href: "/about",
+    title: 'Pricing',
+    href: '/pricing',
   },
   {
-    title: "Contact",
-    href: "/contact-us",
+    title: 'Contact',
+    href: '/contact-us',
   },
   {
-    title: "Blog",
-    href: "/blog",
+    title: 'Blog',
+    href: '/blog',
   },
   {
-    title: "Login",
-    href: "https://app.imla.io/login",
+    title: 'Login',
+    href: 'https://app.imla.io/login',
   },
 ]
 ---
@@ -49,7 +49,7 @@ const links: Link[] = [
       <NavList data={links} />
     </nav>
 
-    <NavLink img={logo} href={"/"} title={"Imla"} classes="md:hidden" />
+    <NavLink img={logo} href={'/'} title={'Imla'} classes="md:hidden" />
 
     <div class="md:flex md:gap-4 hidden">
       <ThemeToggle client:idle>
@@ -72,7 +72,7 @@ const links: Link[] = [
       <NavList data={links} />
       <a
         href="https://app.imla.io/register"
-        class={`${buttonVariants({ size: "lg" })} w-fit md:hidden`}
+        class={`${buttonVariants({ size: 'lg' })} w-fit md:hidden`}
       >
         Get Started
       </a>

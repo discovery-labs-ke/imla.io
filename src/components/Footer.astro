@@ -1,12 +1,12 @@
 ---
-import { Image } from "astro:assets"
+import { Image } from 'astro:assets'
 
-import logo from "@/assets/logo.png"
-import { Button, buttonVariants } from "@/components/ui/button"
-import { Icon } from "astro-icon/components"
+import logo from '@/assets/logo.png'
+import { Button, buttonVariants } from '@/components/ui/button'
+import { Icon } from 'astro-icon/components'
 
-import { footerLinks, socialData } from "@/data/siteData"
-import SocialLinks from "./SocialLinks.astro"
+import { footerLinks, socialData } from '@/data/siteData'
+import SocialLinks from './SocialLinks.astro'
 ---
 
 <footer aria-label="footer-heading" class="border-t bg-card">
@@ -24,14 +24,14 @@ import SocialLinks from "./SocialLinks.astro"
 
             <a
               href="https://www.linkedin.com/company/the-discovery-centre-limited/"
-              class={buttonVariants({ variant: "outline", size: "icon" })}
+              class={buttonVariants({ variant: 'outline', size: 'icon' })}
             >
               <Icon name="linkedin" class="size-5 text-muted-foreground" />
             </a>
 
             <div class="flex gap-2 items-center border rounded-full px-4 w-fit">
               <Icon name="phone" class="size-5 text-muted-foreground" />
-              <p class="mt-[3px] text-muted-foreground">0113291109</p>
+              <p class="mt-[3px] text-muted-foreground">0113 291 109</p>
             </div>
           </div>
         </div>

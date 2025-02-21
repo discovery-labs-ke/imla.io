@@ -1,7 +1,7 @@
 ---
 title: My Success Story with Imla
 description: A Transcription Tool That Delivers
-pubDate: 2024-09-23
+pubDate: 2024-10-01
 thumbnail: ./images/thumbnails/default.jpg
 isDraft: false
 category: case studies
