@@ -1,7 +1,7 @@
 ---
-title: "Mastering Transcription with Imla: A Breezy Guide"
+title: 'Mastering Transcription with Imla: A Breezy Guide'
 description: Ready to ditch the note-taking frenzy and get your audio effortlessly transcribed? Imla's here to save the day! Here's a quick rundown on how to unleash its magic
-pubDate: 2024-09-23
+pubDate: 2024-11-02
 thumbnail: ./images/step-6.png
 isDraft: false
 category: user guides

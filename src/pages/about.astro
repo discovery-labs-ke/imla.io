@@ -1,0 +1,119 @@
+---
+import Heading from '@/components/Heading.astro'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import SectionWrapper from '@/layouts/SectionWrapper.astro'
+import { Icon } from 'astro-icon/components'
+
+const data = [
+  {
+    title: 'Mission',
+    description: 'To promote technology inclusion',
+  },
+  {
+    title: 'Vision',
+    description:
+      'We develop technology solutions that address problems on the African continent. We aim to bridge the technology divide for Africans. We also aim to accelerate the adoption and use of technology in Africa through our solutions.',
+  },
+  {
+    title: 'Values',
+    description: 'Respect, Teamwork and Professionalism.',
+  },
+]
+---
+
+<BaseLayout title="About Imla" description="Our mission, vision and team">
+  <SectionWrapper>
+    <section aria-label="About us section">
+      <Heading tagName="h1" classes="text-center mb-14 md:mb-24 lg:mb-33 ">
+        Who We Are
+      </Heading>
+
+      <div id="grid-wrapper">
+        <Card id="company">
+          <CardHeader>
+            <Heading tagName="h4" classes="text-primary">
+              Discovery Labs
+            </Heading>
+          </CardHeader>
+          <CardContent className="text-balance">
+            <p>
+              Discovery Labs Limited is a Kenyan based software company
+              established in 2021. It primarily focusses on developing software
+              solutions that promote technology inclusion. Discovery Labs
+              Limited has its own software solution, Imla.io is powered by AI.
+              Imla.io currently transcribes audiovisual files with African
+              accents and some African languages. In future it will support
+              language interoperability for African languages.
+            </p>
+          </CardContent>
+        </Card>
+        {
+          data.map((item) => (
+            <article>
+              <Card className="size-fit p-2">
+                <Icon
+                  name={item.title.toLowerCase()}
+                  class={'size-12 lg:size-14'}
+                />
+              </Card>
+              <div id="text">
+                <Heading tagName="h4" classes="text-primary">
+                  {item.title}
+                </Heading>
+                <p class="text-pretty">{item.description}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+  </SectionWrapper>
+</BaseLayout>
+
+<style>
+  svg,
+  p {
+    margin: 0 auto;
+  }
+
+  #grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+
+  article {
+    display: grid;
+    grid-template-columns: 0.2fr 0.8fr;
+    align-items: center;
+  }
+
+  #company {
+    grid-column: 1/2;
+    grid-row: span 3;
+  }
+
+  @media (min-width: 768px) {
+    #grid-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, auto);
+      gap: 1rem;
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+
+    article {
+      grid-column: 2/3;
+      display: grid;
+      grid-template-columns: 0.2fr 0.8fr;
+      align-items: center;
+    }
+
+    #company {
+      grid-column: 1/2;
+      grid-row: span 3;
+    }
+  }
+</style>
