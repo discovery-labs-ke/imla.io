@@ -54,7 +54,7 @@ const data = [
               <Card className="size-fit p-2">
                 <Icon
                   name={item.title.toLowerCase()}
-                  class={'size-12 lg:size-14'}
+                  class={'size-8 lg:size-10'}
                 />
               </Card>
               <div id="text">
@@ -86,12 +86,8 @@ const data = [
   article {
     display: grid;
     grid-template-columns: 0.2fr 0.8fr;
-    align-items: center;
-  }
-
-  #company {
-    grid-column: 1/2;
-    grid-row: span 3;
+    align-items: start;
+    column-gap: 0.5rem;
   }
 
   @media (min-width: 768px) {
@@ -106,9 +102,8 @@ const data = [
 
     article {
       grid-column: 2/3;
-      display: grid;
-      grid-template-columns: 0.2fr 0.8fr;
-      align-items: center;
+      grid-template-columns: 0.1fr 0.9fr;
+      column-gap: 1rem;
     }
 
     #company {
