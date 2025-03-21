@@ -1,4 +1,5 @@
 ---
+import Heading from '@/components/Heading.astro'
 import {
   Card,
   CardContent,
@@ -6,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+
 import {
   Table,
   TableBody,
@@ -14,11 +16,9 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-
 import { pricingBenefits, pricingBundles } from '@/data/siteData'
-import { Icon } from 'astro-icon/components'
-import Heading from '@/components/Heading.astro'
 import SectionWrapper from '@/layouts/SectionWrapper.astro'
+import { Icon } from 'astro-icon/components'
 ---
 
 <SectionWrapper>
@@ -30,8 +30,7 @@ import SectionWrapper from '@/layouts/SectionWrapper.astro'
 
     <Card className="w-full lg:max-w-5xl pb-4">
       <CardHeader>
-        <CardTitle className="tracking-wide"
-          >Transcription minutes made simple</CardTitle
+        <CardTitle className="tracking-wide">Transcription minutes made simple</CardTitle
         >
         <CardDescription>Starting at KES 5/minute</CardDescription>
       </CardHeader>
@@ -45,7 +44,7 @@ import SectionWrapper from '@/layouts/SectionWrapper.astro'
           </TableHeader>
           <TableBody>
             {
-              pricingBundles.map((item) => (
+              pricingBundles.map(item => (
                 <TableRow>
                   <TableCell className="font-medium">{item.bundle}</TableCell>
                   <TableCell>KES. {item.price}</TableCell>
@@ -61,7 +60,7 @@ import SectionWrapper from '@/layouts/SectionWrapper.astro'
           </p>
           <ul class="space-y-1">
             {
-              pricingBenefits.map((benefit) => (
+              pricingBenefits.map(benefit => (
                 <li class="flex gap-2 text-start sm:text-sm lg:text-base ">
                   <Icon name="check" class="text-primary size-6 " />
                   <p class="w-11/12">{benefit}</p>

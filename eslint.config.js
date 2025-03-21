@@ -5,8 +5,13 @@ export default antfu({
   react: true,
   astro: true,
   ignores: [
-    // Ignore all files in components/ui directory (shadcn)
     'src/components/ui/**',
+    'src/lib/utils.ts',
+    'components.json',
+    'astro.config.mjs',
+    'tailwind.config.mjs',
+    '.astro/**',
+    '.netlify/**',
+    'netlify.toml',
   ],
 })
-

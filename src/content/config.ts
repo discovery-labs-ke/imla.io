@@ -1,19 +1,19 @@
-import { defineCollection, z } from "astro:content"
+import { defineCollection, z } from 'astro:content'
 
 const testimonials = defineCollection({
-  type: "data",
+  type: 'data',
   schema: z.object({
     name: z.string(),
     title: z.string(),
     company: z.string(),
     quote: z.string().max(300, {
-      message: "Quote cannot be longer than 300 characters",
+      message: 'Quote cannot be longer than 300 characters',
     }),
   }),
 })
 
 const faqs = defineCollection({
-  type: "data",
+  type: 'data',
   schema: z.object({
     question: z.string(),
     answer: z.string(),
@@ -22,7 +22,7 @@ const faqs = defineCollection({
 })
 
 const steps = defineCollection({
-  type: "data",
+  type: 'data',
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -32,7 +32,7 @@ const steps = defineCollection({
 })
 
 const features = defineCollection({
-  type: "data",
+  type: 'data',
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -42,7 +42,7 @@ const features = defineCollection({
 })
 
 const posts = defineCollection({
-  type: "content",
+  type: 'content',
   schema: ({ image }) =>
     z.object({
       title: z.string(),

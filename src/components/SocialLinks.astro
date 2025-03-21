@@ -1,14 +1,14 @@
 ---
-import { socialData } from "@/data/siteData"
-import { buttonVariants } from "@/components/ui/button"
-import { Icon } from "astro-icon/components"
+import { buttonVariants } from '@/components/ui/button'
+import { socialData } from '@/data/siteData'
+import { Icon } from 'astro-icon/components'
 ---
 
 {
   socialData.map(({ href, title, icon }) => (
     <a
       aria-label={title}
-      class={buttonVariants({ variant: "outline", size: "icon" })}
+      class={buttonVariants({ variant: 'outline', size: 'icon' })}
       href={href}
     >
       <Icon name={icon} size={20} />

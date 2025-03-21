@@ -17,7 +17,7 @@ Imla is rapidly gaining recognition as a powerful transcription tool, particular
 
 Mburu has mainly worked with **Swahili** on Imla and hasn’t yet explored its capabilities with other dialects.
 
-> "I’m yet to try any other dialect other than Swahili,"  
+> "I’m yet to try any other dialect other than Swahili,"
 > — Mburu
 
 Despite this, their experience with Swahili transcription has been overwhelmingly positive, showcasing Imla's strength in processing African languages. This aligns perfectly with Imla’s mission of providing accurate transcriptions for African dialects, setting it apart from many other tools in the market.
@@ -26,7 +26,7 @@ Despite this, their experience with Swahili transcription has been overwhelmingl
 
 While Mburu primarily works in English, they had the opportunity to try Imla’s translation feature once.
 
-> "The only time I used it, I got 60% accuracy,"  
+> "The only time I used it, I got 60% accuracy,"
 > — Mburu
 
 While acknowledging that there’s room for improvement, this feedback still reflects **promising progress** in handling the complex task of translating dialects. As Imla continues to refine its AI models, Mburu expects better results in the future, making it a valuable tool for multilingual transcription.
@@ -35,7 +35,7 @@ While acknowledging that there’s room for improvement, this feedback still ref
 
 Mburu was particularly impressed with Imla’s transcription accuracy.
 
-> "Between me and you, 100%, but allow me to say 95% to leave some room for improvement,"  
+> "Between me and you, 100%, but allow me to say 95% to leave some room for improvement,"
 > — Mburu
 
 This high level of satisfaction, particularly with Swahili transcription, highlights Imla’s reliability in this area. A 95% accuracy rate is a notable achievement, showing that Imla is already excelling in its core function.
@@ -44,7 +44,7 @@ This high level of satisfaction, particularly with Swahili transcription, highli
 
 One of the standout features of Imla, according to Mburu, is its affordability.
 
-> "About the cost, it's quite cost-effective,"  
+> "About the cost, it's quite cost-effective,"
 > — Mburu
 
 This emphasizes that Imla not only provides accurate transcriptions but does so at a reasonable price. For users managing large volumes of audio, this balance of cost and quality is a major advantage.

@@ -1,16 +1,18 @@
 ---
-import { getCollection } from "astro:content"
-import { InfiniteMovingCards } from "./infinite-moving-cards"
-import Heading from "@/components/Heading.astro"
-import SectionWrapper from "@/layouts/SectionWrapper.astro"
+import Heading from '@/components/Heading.astro'
+import SectionWrapper from '@/layouts/SectionWrapper.astro'
+import { getCollection } from 'astro:content'
+import { InfiniteMovingCards } from './infinite-moving-cards'
 
-const testimonials = await getCollection("testimonials")
+const testimonials = await getCollection('testimonials')
 ---
 
 <SectionWrapper>
   <section aria-label="Testimonials section" class="space-y-14 lg:space-y-32">
-    <Heading tagName="h1" classes="text-center"
-      >We are making a difference</Heading
+    <Heading
+      tagName="h1"
+      classes="text-center"
+    >We are making a difference</Heading
     >
     <div
       class="rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden"

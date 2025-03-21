@@ -1,26 +1,28 @@
 ---
-// layouts
-import SectionWrapper from "@/layouts/SectionWrapper.astro"
-
 // components
-import Heading from "@/components/Heading.astro"
+import Heading from '@/components/Heading.astro'
 
-import { getCollection } from "astro:content"
+import { buttonVariants } from '@/components/ui/button'
 
-import StepCard from "../guide/StepCard.astro"
-import { buttonVariants } from "@/components/ui/button"
+// layouts
+import SectionWrapper from '@/layouts/SectionWrapper.astro'
 
-const steps = await getCollection("steps")
+import { getCollection } from 'astro:content'
+import StepCard from '../guide/StepCard.astro'
+
+const steps = await getCollection('steps')
 ---
 
 <SectionWrapper>
   <section aria-label="How it works section" class="space-y-14 lg:space-y-32">
-    <Heading tagName="h1" classes="text-center"
-      >How <span class="text-primary">Imla</span> works</Heading
+    <Heading
+      tagName="h1"
+      classes="text-center"
+    >How <span class="text-primary">Imla</span> works</Heading
     >
     <div class="space-y-10">
       <div class="flex justify-center gap-y-4 gap-x-8 flex-wrap">
-        {steps.slice(1).map((item) => <StepCard data={item.data} />)}
+        {steps.slice(1).map(item => <StepCard data={item.data} />)}
       </div>
       <div class="flex flex-col justify-center items-center space-y-4">
         <p
@@ -31,7 +33,7 @@ const steps = await getCollection("steps")
         </p>
         <a
           href="/blog/getting-started"
-          class={`${buttonVariants({ size: "lg" })} w-fit text-xl`}
+          class={`${buttonVariants({ size: 'lg' })} w-fit text-xl`}
         >
           Learn more
         </a>

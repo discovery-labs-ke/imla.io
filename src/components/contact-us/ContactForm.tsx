@@ -1,8 +1,4 @@
-import { z } from "astro/zod"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button'
 import {
   Form,
   FormControl,
@@ -11,19 +7,23 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+} from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
+
+import { Textarea } from '@/components/ui/textarea'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'astro/zod'
+import { useForm } from 'react-hook-form'
 
 const formSchema = z.object({
   name: z
     .string()
-    .min(3, { message: "Must be 3 or more characters long" })
-    .max(20, { message: "Must be 30 or fewer characters long" }),
+    .min(3, { message: 'Must be 3 or more characters long' })
+    .max(20, { message: 'Must be 30 or fewer characters long' }),
   message: z
     .string()
-    .min(3, { message: "Must be 3 or more characters long" })
-    .max(200, { message: "Must be 200 or fewer characters long" }),
+    .min(3, { message: 'Must be 3 or more characters long' })
+    .max(200, { message: 'Must be 200 or fewer characters long' }),
 })
 
 export default function ContactForm() {
@@ -31,8 +31,8 @@ export default function ContactForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
-      message: "",
+      name: '',
+      message: '',
     },
   })
 
@@ -40,13 +40,12 @@ export default function ContactForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    console.log(values)
 
     try {
-      const res = await fetch("https://imla.io/api/contact_sales", {
-        method: "POST",
+      const res = await fetch('https://imla.io/api/contact_sales', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application-json",
+          'Content-Type': 'application-json',
         },
         body: JSON.stringify({
           name: values.name,
@@ -58,10 +57,10 @@ export default function ContactForm() {
         throw new Error(`Response status: ${res.status}`)
       }
 
-      const data = await res.json()
-      console.log("🚀 ~ onSubmit ~ data:", data)
-    } catch (error) {
-      console.log("🚀 ~ onSubmit ~ error:", error)
+      // const data = await res.json()
+    }
+    catch (error) {
+      console.error('🚀 ~ onSubmit ~ error:', error)
     }
   }
 

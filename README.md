@@ -1,69 +1,110 @@
-# Imla Rebuild
+# Imla.io
 
-## To do
+Imla is an AI-powered transcription service specialized in handling African accents and languages. Built with Astro, React, and TailwindCSS.
 
-### Home
+## Features
 
-- [x] Hero (dashboard showcase)
-- [x] ## Testimonials
-- [x] How it works
-  - [ ] click to read more
-- [ ] Introducing Imla Assistant
-- [x] Features
-- [x] FAQs
-- [x] CTA
+- 🎯 Accurate transcription for Kenyan English, Swahili, and Sheng
+- 🎨 Modern UI with dark/light theme support
+- 📱 Responsive design
+- 🚀 Fast page loads with view transitions
+- 📊 Built-in analytics with PostHog
+- 🔍 SEO optimized
+- 🗺️ Automatic sitemap generation
+- 🐛 Error tracking with Sentry
 
-### Pricing
+## Tech Stack
 
-- [x] Pricing table
-- [x] Cost calculator + print
-  - [x] Formula
-  - [x] Printing
-- [x] FAQ
+- **Framework:** [Astro](https://astro.build)
+- **UI Components:** [shadcn/ui](https://ui.shadcn.com)
+- **Styling:** [TailwindCSS](https://tailwindcss.com)
+- **Icons:** [Astro Icon](https://github.com/natemoo-re/astro-icon)
+- **Forms:** React Hook Form
+- **Analytics:** PostHog
+- **Error Tracking:** Sentry
+- **Deployment:** Netlify
 
-### Contact sales
+## Getting Started
 
-- [x] Contact sales form
-  - [ ] API integration
+### Prerequisites
 
-### Changelog
+- Node.js 18 or higher
+- pnpm
 
-- [ ] Template: https://astro-nomy.vercel.app/releases
+### Installation
 
-### Blog
+1. Clone the repository
 
-- Imla Assistant - How it works
-- [x] getting started guide
-- success stories
-  - [ ] Bernard
-  - [x] Mburu
-  - [x] daniel's linked in articles
-- [x] View template - Tracing beam
-- [x] Add author to posts
+```bash
+git clone https://github.com/your-username/imla.git
+cd imla
+```
 
-### About page
+2. Install dependencies
 
-- [ ] Mission statement
-- [ ] Vision
-- [ ] More about the Imla product
+```bash
+pnpm install
+```
 
-### Dev Tools
+3. Start the development server
 
-- [x] Astro page insight
-- [ ] Astro meta tags
-- [ ] Cypress for testing
+```bash
+pnpm dev
+```
 
-### Deployment tools
+### Build
 
-- [x] Astro SEO
-- [x] Astro sitemaps
-- [x] Sentry
-- [x] Posthog
-- [ ] WhatsApp integration
-- [ ] Vercel adapter
+```bash
+pnpm build
+```
 
-### Bugs & Fixes
+### Preview
 
-- [x] View transitions cause theme reset when changing pages
-- [x] Use native print() api to generate a quote (works on mobile)
-- [x] Uninstall react pdf
+```bash
+pnpm preview
+```
+
+## Project Structure
+
+```
+├── src/
+│   ├── components/     # UI components
+│   ├── content/        # Content collections (blog, FAQs, etc.)
+│   ├── layouts/        # Page layouts
+│   ├── pages/          # Route pages
+│   ├── styles/         # Global styles
+│   └── lib/           # Utility functions
+├── public/            # Static assets
+└── astro.config.mjs   # Astro configuration
+```
+
+## Content Management
+
+Content is managed through Astro's content collections:
+
+- `posts/` - Blog posts
+- `faqs/` - Frequently asked questions
+- `testimonials/` - User testimonials
+- `features/` - Product features
+- `steps/` - How-it-works steps
+
+## Development
+
+### Linting
+
+```bash
+pnpm lint
+pnpm lint:fix
+```
+
+## Deployment
+
+The site is deployed on Netlify with automatic deployments on main branch updates.
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request

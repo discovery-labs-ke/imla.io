@@ -1,28 +1,29 @@
 ---
-export const prerender = false
-import { Image } from "astro:assets"
-
-// css & fonts
-import "@/styles/globals.css"
-import "@fontsource-variable/fraunces"
-import "@fontsource/poppins"
+import labs_logo from '@/assets/labs-logo.png'
 
 // images
-import logo from "@/assets/logo.png"
-import labs_logo from "@/assets/labs-logo.png"
+import logo from '@/assets/logo.png'
+import { formatToCurrency } from '@/lib/utils'
+import { Image } from 'astro:assets'
 
-import { formatToCurrency } from "@/lib/utils"
+// css & fonts
+import '@/styles/globals.css'
+import '@fontsource-variable/fraunces'
+
+import '@fontsource/poppins'
+
+export const prerender = false
 
 const currentDate = new Date()
-const formattedDate = new Intl.DateTimeFormat("en-US", {
-  month: "long",
-  day: "numeric",
-  year: "numeric",
+const formattedDate = new Intl.DateTimeFormat('en-US', {
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric',
 }).format(currentDate)
 
 let DEFAULT_HOURS = 100
 const { hours } = Astro.params
-DEFAULT_HOURS = hours ? parseInt(hours) : DEFAULT_HOURS
+DEFAULT_HOURS = hours ? Number.parseInt(hours) : DEFAULT_HOURS
 const RATE = 48 // 48bob per hr
 const cost = DEFAULT_HOURS * RATE
 
@@ -102,20 +103,20 @@ const formattedAmount = formatToCurrency(cost)
 </style>
 
 <script is:inline>
-  // Wait for both logos to load
-  const logo1 = document.getElementById("logo1")
-  const logo2 = document.getElementById("logo2")
+// Wait for both logos to load
+const logo1 = document.getElementById('logo1')
+const logo2 = document.getElementById('logo2')
 
-  const checkImagesLoaded = () => {
-    if (logo1.complete && logo2.complete) {
-      print()
-    }
+function checkImagesLoaded() {
+  if (logo1.complete && logo2.complete) {
+    print()
   }
+}
 
-  // Attach event listeners
-  logo1.onload = checkImagesLoaded
-  logo2.onload = checkImagesLoaded
+// Attach event listeners
+logo1.onload = checkImagesLoaded
+logo2.onload = checkImagesLoaded
 
-  // Handle case where images are already cached
-  window.onload = checkImagesLoaded
+// Handle case where images are already cached
+window.onload = checkImagesLoaded
 </script>

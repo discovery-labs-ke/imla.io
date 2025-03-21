@@ -1,7 +1,6 @@
 ---
-import type { Props as Link } from "./NavLink.astro"
-import NavLink from "./NavLink.astro"
-import logo from "@/assets/logo.png"
+import type { Props as Link } from './NavLink.astro'
+import NavLink from './NavLink.astro'
 
 type Props = {
   data: Link[]
@@ -12,7 +11,7 @@ const { data } = Astro.props
 ---
 
 {
-  data.map((link) => (
+  data.map(link => (
     <NavLink
       img={link.img}
       href={link.href}

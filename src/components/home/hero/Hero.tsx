@@ -1,6 +1,6 @@
-import { ContainerScroll } from "@/components/home/hero/container-scroll-animation"
+import type { ReactNode } from 'react'
 
-import type { ReactNode } from "react"
+import { ContainerScroll } from '@/components/home/hero/container-scroll-animation'
 
 function HeroTitle() {
   return (

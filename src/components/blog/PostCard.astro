@@ -1,14 +1,14 @@
 ---
-import { Badge } from "@/components/ui/badge"
-import { Image } from "astro:assets"
-import type { CollectionEntry } from "astro:content"
-import DateFormatter from "./DateFormatter.astro"
+import type { CollectionEntry } from 'astro:content'
+import { Badge } from '@/components/ui/badge'
+import { Image } from 'astro:assets'
+import DateFormatter from './DateFormatter.astro'
 
-type Props = CollectionEntry<"posts">
+type Props = CollectionEntry<'posts'>
 
 const post = Astro.props
 
-const { title, description, thumbnail, pubDate, category } = post.data
+const { title, thumbnail, pubDate, category } = post.data
 ---
 
 <article class="group space-y-4">
@@ -30,7 +30,7 @@ const { title, description, thumbnail, pubDate, category } = post.data
   <div class="flex items-center justify-between">
     <a
       href={`/blog/category/${category}`}
-      transition:name={"badge-cat-" + post.slug}
+      transition:name={`badge-cat-${post.slug}`}
     >
       <Badge className="capitalize text-background">
         {category}
@@ -43,7 +43,7 @@ const { title, description, thumbnail, pubDate, category } = post.data
     <a href={`/blog/${post.slug}/`} class="group-hover:underline">
       <h2
         class="font-heading text-xl md:text-2xl leading-snug line-clamp-3"
-        transition:name={"title-" + post.slug}
+        transition:name={`title-${post.slug}`}
       >
         {title}
       </h2>

@@ -1,14 +1,14 @@
 ---
+import type { Props as Link } from './NavLink.astro'
+import logo from '@/assets/logo.png'
 import { ThemeToggle } from '@/components/ThemeToggle'
 import { buttonVariants } from '@/components/ui/button'
 import { Icon } from 'astro-icon/components'
+import SocialLinks from '../SocialLinks.astro'
 import MobileNav from './MobileNav'
-import type { Props as Link } from './NavLink.astro'
+
 import NavLink from './NavLink.astro'
 import NavList from './NavList.astro'
-
-import logo from '@/assets/logo.png'
-import SocialLinks from '../SocialLinks.astro'
 
 const links: Link[] = [
   {
@@ -49,7 +49,7 @@ const links: Link[] = [
       <NavList data={links} />
     </nav>
 
-    <NavLink img={logo} href={'/'} title={'Imla'} classes="md:hidden" />
+    <NavLink img={logo} href="/" title="Imla" classes="md:hidden" />
 
     <div class="md:flex md:gap-4 hidden">
       <ThemeToggle client:idle>
@@ -63,7 +63,7 @@ const links: Link[] = [
         />
       </ThemeToggle>
 
-      <a href="https://app.imla.io/register" class={buttonVariants()} )}>
+      <a href="https://app.imla.io/register" class={buttonVariants()}>
         Get Started
       </a>
     </div>

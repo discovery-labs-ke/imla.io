@@ -1,22 +1,21 @@
-import { z } from "astro/zod"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button'
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { useState } from "react"
-import { formatToCurrency } from "../../lib/utils"
+} from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
 
-type Props = {
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'astro/zod'
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { formatToCurrency } from '../../lib/utils'
+
+interface Props {
   onSubmit: (hours: number) => void
 }
 
