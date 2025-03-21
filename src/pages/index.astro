@@ -1,27 +1,15 @@
 ---
-import ui from '@/assets/ui.png'
-
 import Start from '@/components/home/cta/Start.astro'
 import FaqSection from '@/components/home/FaqSection.astro'
 import Features from '@/components/home/features/Features.astro'
 import Guide from '@/components/home/guide/Guide.astro'
-import Hero from '@/components/home/hero/Hero'
+import Hero from '@/components/home/hero/hero.astro'
 import Testimonials from '@/components/home/testimonials/Testimonials.astro'
 import BaseLayout from '@/layouts/BaseLayout.astro'
-import { Image } from 'astro:assets'
 ---
 
 <BaseLayout>
-  <Hero client:load>
-    <Image
-      src={ui}
-      alt="Imla for desktops"
-      format="avif"
-      width={1000}
-      loading="eager"
-      densities={[1.5, 2]}
-    />
-  </Hero>
+  <Hero />
   <Testimonials />
   <Guide />
   <Features />
