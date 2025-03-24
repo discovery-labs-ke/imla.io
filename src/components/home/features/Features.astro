@@ -1,22 +1,23 @@
 ---
-import Heading from "@/components/Heading.astro"
-import SectionWrapper from "@/layouts/SectionWrapper.astro"
-import { getCollection } from "astro:content"
-import FeatureItem from "./FeatureItem.astro"
+import Heading from '@/components/Heading.astro'
+import SectionWrapper from '@/layouts/SectionWrapper.astro'
+import { getCollection } from 'astro:content'
+import FeatureItem from './FeatureItem.astro'
 
-const features = await getCollection("features")
+const features = await getCollection('features')
 ---
 
 <SectionWrapper id="features">
   <section aria-label="Features section" class="space-y-24 lg:space-y-32">
-    <Heading tagName="h1" classes="text-center"
-      >Imla is designed to produce <span class="italic text-primary"
-        >accurate</span
+    <Heading
+      tagName="h1"
+      classes="text-center"
+    >Imla is designed to produce <span class="italic text-primary">accurate</span
       > transcripts, even for <span class="italic text-primary">Swahili</span>
     </Heading>
 
     <ul class="flex flex-col gap-y-24 lg:gap-y-32 items-center">
-      {features.map((item) => <FeatureItem data={item.data} />)}
+      {features.map(item => <FeatureItem data={item.data} />)}
     </ul>
   </section>
 </SectionWrapper>

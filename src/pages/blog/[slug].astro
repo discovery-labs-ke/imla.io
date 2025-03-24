@@ -1,51 +1,51 @@
 ---
-import DateFormatter from "@/components/blog/DateFormatter.astro"
-import Heading from "@/components/Heading.astro"
-import { Badge } from "@/components/ui/badge"
-import { Button, buttonVariants } from "@/components/ui/button"
-import BaseLayout from "@/layouts/BaseLayout.astro"
-import { cn } from "@/lib/utils"
-import { Icon } from "astro-icon/components"
-import { Image } from "astro:assets"
-import type { CollectionEntry } from "astro:content"
-import { getCollection } from "astro:content"
+import type { CollectionEntry } from 'astro:content'
+import DateFormatter from '@/components/blog/DateFormatter.astro'
+import Heading from '@/components/Heading.astro'
+import { Badge } from '@/components/ui/badge'
+import { buttonVariants } from '@/components/ui/button'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { cn } from '@/lib/utils'
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
+import { getCollection } from 'astro:content'
 
 export async function getStaticPaths() {
-  const posts = await getCollection("posts")
-  return posts.map((post) => ({
+  const posts = await getCollection('posts')
+  return posts.map(post => ({
     params: { slug: post.slug },
     props: post,
   }))
 }
 
-type Props = CollectionEntry<"posts">
+type Props = CollectionEntry<'posts'>
 
 const post = Astro.props
-const { title, description, pubDate, category, thumbnail, author, avatar } =
-  post.data
+const { title, description, pubDate, category, thumbnail, author, avatar }
+  = post.data
 const { slug } = Astro.params
 const { Content } = await post.render()
 
 if (!slug || !post) {
   return new Response(null, {
     status: 404,
-    statusText: "Not found",
+    statusText: 'Not found',
   })
 }
 ---
 
-<BaseLayout title={"Imla blog | " + title} description={description}>
+<BaseLayout title={`Imla blog | ${title}`} description={description}>
   <div class="relative container max-w-screen-md py-10">
     <button
       aria-label="back"
-      transition:animate={"slide"}
+      transition:animate="slide"
       class={cn(
-        buttonVariants({ variant: "ghost" }),
-        "lg:absolute lg:left-[-200px] lg:top-10 xl:inline-flex text-muted-foreground"
+        buttonVariants({ variant: 'ghost' }),
+        'lg:absolute lg:left-[-200px] lg:top-10 xl:inline-flex text-muted-foreground',
       )}
       onclick="history.back()"
     >
-      <Icon name={"prev"} size={20} />
+      <Icon name="prev" size={20} />
       Back
     </button>
 

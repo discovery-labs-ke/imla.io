@@ -1,0 +1,29 @@
+---
+import ui from '@/assets/ui.png'
+import { Image } from 'astro:assets'
+import Window from './window.astro';
+
+
+---
+<div class="container mx-auto pt-10 pb-14 lg:pt-20 lg:pb-32">
+  <h1 class="text-4xl text-foreground text-balance text-center pb-4 lg:pb-10">
+    Unleash the power of
+    <br />
+    <span class="text-5xl md:text-[6rem] font-black mt-1
+    leading-none font-serif text-balance text-primary text-center"
+    >
+      Imla Transcripts
+    </span>
+  </h1>
+
+  <Window>
+    <Image
+      src={ui}
+      alt="Imla for desktops"
+      format="avif"
+      width={1000}
+      loading="eager"
+      densities={[1.5, 2]}
+    />
+  </Window>
+</div>

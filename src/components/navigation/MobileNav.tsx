@@ -1,7 +1,7 @@
-import type { ReactNode } from "react"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { HamburgerMenuIcon } from "@radix-ui/react-icons"
+import type { ReactNode } from 'react'
+import { Button } from '@/components/ui/button'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { HamburgerMenuIcon } from '@radix-ui/react-icons'
 
 export default function MobileNav({ children }: { children: ReactNode }) {
   return (

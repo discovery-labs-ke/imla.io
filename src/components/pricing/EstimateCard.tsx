@@ -1,14 +1,14 @@
+import { buttonVariants } from '@/components/ui/button'
+
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-
-import { buttonVariants } from "@/components/ui/button"
-import { useState } from "react"
-import EstimateForm from "./EstimateForm"
+} from '@/components/ui/card'
+import { useState } from 'react'
+import EstimateForm from './EstimateForm'
 
 export default function EstimateCard() {
   const [hours, setHours] = useState(100)
@@ -28,7 +28,7 @@ export default function EstimateCard() {
 
           <a
             href={`/pricing/estimate/${hours}`}
-            className={buttonVariants({ variant: "outline" })}
+            className={buttonVariants({ variant: 'outline' })}
           >
             Print quote
           </a>

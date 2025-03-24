@@ -1,6 +1,6 @@
 ---
 import Heading from '@/components/Heading.astro'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import SectionWrapper from '@/layouts/SectionWrapper.astro'
 import { Icon } from 'astro-icon/components'
@@ -44,17 +44,17 @@ const data = [
               Limited has its own software solution, Imla.io is powered by AI.
               Imla.io currently transcribes audiovisual files with African
               accents and some African languages. In future it will support
-              language interoperability for African languages.
+              language interoperability for African languages.
             </p>
           </CardContent>
         </Card>
         {
-          data.map((item) => (
+          data.map(item => (
             <article>
               <Card className="size-fit p-2">
                 <Icon
                   name={item.title.toLowerCase()}
-                  class={'size-8 lg:size-10'}
+                  class="size-8 lg:size-10"
                 />
               </Card>
               <div id="text">

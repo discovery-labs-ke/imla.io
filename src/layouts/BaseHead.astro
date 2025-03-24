@@ -1,17 +1,17 @@
 ---
-import { ViewTransitions } from "astro:transitions"
-import ThemeHeadScript from "@/components/theme-head-script.astro"
-import { SEO } from "astro-seo"
-import { baseData } from "@/data/siteData"
-// import Posthog from "@/components/monitoring/posthog.astro"
+import ThemeHeadScript from '@/components/theme-head-script.astro'
+import { baseData } from '@/data/siteData'
+import { SEO } from 'astro-seo'
+import { ViewTransitions } from 'astro:transitions'
+
 
 type Props = {
   title?: string
   description?: string
 }
 
-const { title = baseData.title, description = baseData.description } =
-  Astro.props
+const { title = baseData.title, description = baseData.description }
+  = Astro.props
 ---
 
 <head>
@@ -26,16 +26,15 @@ const { title = baseData.title, description = baseData.description } =
     description={description}
     openGraph={{
       basic: {
-        title: title,
-        type: "website",
+        title,
+        type: 'website',
         image: baseData.image.src,
       },
     }}
     twitter={{
-      creator: "@snkiiyuru",
+      creator: '@snkiiyuru',
     }}
   />
   <ThemeHeadScript />
   <ViewTransitions />
-  <!-- <Posthog /> -->
 </head>

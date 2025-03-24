@@ -1,12 +1,11 @@
 ---
-import { Image } from 'astro:assets'
-
 import logo from '@/assets/logo.png'
-import { Button, buttonVariants } from '@/components/ui/button'
+
+import { buttonVariants } from '@/components/ui/button'
+import { footerLinks } from '@/data/siteData'
 import { Icon } from 'astro-icon/components'
 
-import { footerLinks, socialData } from '@/data/siteData'
-import SocialLinks from './SocialLinks.astro'
+import { Image } from 'astro:assets'
 ---
 
 <footer aria-label="footer-heading" class="border-t bg-card">
@@ -24,7 +23,7 @@ import SocialLinks from './SocialLinks.astro'
 
             <a
               href="https://www.linkedin.com/company/discovery-labs-limited/"
-              class={buttonVariants({ variant: "outline", size: "icon" })}
+              class={buttonVariants({ variant: 'outline', size: 'icon' })}
             >
               <Icon name="linkedin" class="size-5 text-muted-foreground" />
             </a>
@@ -45,7 +44,7 @@ import SocialLinks from './SocialLinks.astro'
         class="mt-12 grid grid-cols-2 gap-12 md:grid-cols-3 lg:col-span-2 lg:mt-0"
       >
         {
-          footerLinks.map((group) => (
+          footerLinks.map(group => (
             <div class="col-span-1 md:grid md:gap-12">
               <div class="flex flex-col gap-y-2">
                 <h3 class="">
@@ -54,7 +53,7 @@ import SocialLinks from './SocialLinks.astro'
                   </span>
                 </h3>
                 <ul class="flex flex-col gap-y-2" role="list">
-                  {group.children.map((link) => (
+                  {group.children.map(link => (
                     <li>
                       <span class="text-muted-foreground text-sm block">
                         <a

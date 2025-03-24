@@ -1,24 +1,26 @@
 ---
-// astro tools
-import { getCollection } from "astro:content"
+import FaqList from '@/components/faqs/FaqList'
 
 // layouts
-import SectionWrapper from "@/layouts/SectionWrapper.astro"
+import SectionWrapper from '@/layouts/SectionWrapper.astro'
 
+// astro tools
+import { getCollection } from 'astro:content'
 // components
-import Heading from "../Heading.astro"
-import FaqList from "@/components/faqs/FaqList"
+import Heading from '../Heading.astro'
 
-const faqs = await getCollection("faqs", (item) => item.data.isGeneral)
+const faqs = await getCollection('faqs', item => item.data.isGeneral)
 ---
 
 <SectionWrapper id="faq">
   <section aria-label="FAQ section" class="space-y-14 lg:space-y-32">
-    <Heading tagName="h1" classes="text-center"
-      >Let's answer some questions</Heading
+    <Heading
+      tagName="h1"
+      classes="text-center"
+    >Let's answer some questions</Heading
     >
     <div>
-      <FaqList data={faqs.map((item) => item.data)} client:visible />
+      <FaqList data={faqs.map(item => item.data)} client:visible />
     </div>
   </section>
 </SectionWrapper>

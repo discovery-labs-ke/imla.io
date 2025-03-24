@@ -11,18 +11,18 @@ export const baseData = {
 
 export const socialData = [
   {
-    href: "https://www.linkedin.com/company/discovery-labs-limited/",
-    icon: "linkedin",
-    title: "Linked In",
+    href: 'https://www.linkedin.com/company/discovery-labs-limited/',
+    icon: 'linkedin',
+    title: 'Linked In',
   },
 ]
 
-type FooterLink = {
+interface FooterLink {
   name: string
   href: string
 }
 
-type FooterGroup = {
+interface FooterGroup {
   name: string
   children: FooterLink[]
 }
