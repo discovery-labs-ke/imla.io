@@ -4,7 +4,7 @@ description: A Transcription Tool That Delivers
 pubDate: 2024-10-01
 thumbnail: ./images/thumbnails/default.jpg
 isDraft: false
-category: case studies
+category: success story
 author: Grace Mueni
 avatar: ./images/avatars/default.png
 ---

@@ -4,7 +4,7 @@ description: A thought provoking take on FDGs
 pubDate: 2024-09-23
 thumbnail: ./images/thumbnails/default.jpg
 isDraft: false
-category: case studies
+category: case study
 author: Daniel Gichuki
 avatar: ./images/avatars/default.png
 ---

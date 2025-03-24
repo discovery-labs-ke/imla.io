@@ -4,7 +4,7 @@ description: Ready to ditch the note-taking frenzy and get your audio effortless
 pubDate: 2024-11-02
 thumbnail: ./images/step-6.png
 isDraft: false
-category: user guides
+category: user guide
 author: Grace Mueni
 avatar: ./images/avatars/default.png
 ---
